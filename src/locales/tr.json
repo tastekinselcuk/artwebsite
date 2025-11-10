@@ -1,0 +1,166 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "ebru": "Ebru Sanatı",
+    "photography": "Fotoğrafçılık",
+    "about": "Hakkımda"
+  },
+  "home": {
+    "hero": {
+      "title": "Sanat ve Vizyon",
+      "titleHighlight": "Buluşuyor",
+      "subtitle": "Türk Ebru sanatının akışkan güzelliği ile modern fotoğrafçılığın geometrik hassasiyetini keşfedin",
+      "exploreEbru": "Ebru Sanatını Keşfet",
+      "viewPhoto": "Fotoğrafları İncele"
+    },
+    "philosophy": {
+      "title": "İkili Perspektifler",
+      "description": "Sanat, gelenek ve yenilik arasında bir konuşmadır. Antik Ebru marbling tekniği ve çağdaş fotoğrafçılık merceği aracılığıyla görsel hikaye anlatımının sınırlarını keşfediyorum—akışkan organik formların geometrik hassasiyetle dans ettiği ve her parçanın ikiliğe dair bir meditasyona dönüştüğü yer.",
+      "ebruTitle": "Ebru Sanatı",
+      "ebruDesc": "Su üzerinde pigmentlerin yüzdüğü, büyüleyici organik desenler yaratan antik Türk su süsleme sanatı—her eser benzersiz, tekrarlanamaz, canlı.",
+      "photoTitle": "Fotoğrafçılık",
+      "photoDesc": "Minimalist bir mercekle anları yakalamak—yapı, ışık ve gölgede güzelliği bulmak. Her kare, geometri ve duygunun kasıtlı bir kompozisyonudur."
+    }
+  },
+  "about": {
+    "title": "Sanatçı Hakkında",
+    "intro": "Dünyalar arasında köprü kuran bir sanatçıyım—antik ve çağdaş, akışkan ve yapısal, organik ve geometrik.",
+    "para1": "Yüzyıllar eski Türk Ebru sanatı aracılığıyla, su ve pigmentin öngörülemez güzelliğini keşfediyorum. Her eser, geçicilik ve kaostan doğanı kabul etme üzerine bir meditasyondur.",
+    "para2": "Fotoğrafçılık pratiğim bu akışkanlığı kasıtlı kompozisyonla tamamlıyor—mimari, ışık ve negatif alanda şiiri buluyorum. Ebru kendiliğindenliği kucaklarken, fotoğrafçılık niyet ister. Birlikte kontrol ve teslimiyete dair bir diyalog oluşturuyorlar.",
+    "para3": "Gelenek ve yenilik arasında konumlanarak, düşünceye davet eden ve yaratıcı sürecin ikiliğini kutlayan işler yaratıyorum.",
+    "contact": "İletişime Geçin",
+    "quote": "Sanat mükemmellikle ilgili değil—varoluşla ilgili. Boş sayfaya, durgun suya, boş çerçeveye gelmek ve ortaya çıkmak isteyene güvenmekle ilgili."
+  },
+    "ebru": {
+    "title": "Ebru Sanatı",
+    "subtitle": "Her parçanın pigment, su ve zaman arasında benzersiz bir konuşma olduğu antik Türk su süsleme sanatı",
+    "artworks": [
+      {
+        "title": "Turkuaz Dalgalar",
+        "description": "Su üzerinde turkuaz ve mercan pigmentlerinin dansı, okyanus dalgalarını yansıtan organik kıvrımlar yaratıyor.",
+        "year": "2024"
+      },
+      {
+        "title": "Altın Akış",
+        "description": "Akışkan harekette asılı duran narin altın yapraklar, yakalanmış güneş ışınları gibi ışığı yakalıyor.",
+        "year": "2024"
+      },
+      {
+        "title": "Mermer Rüyalar",
+        "description": "Su ve mürekkebin öngörülemez doğasından ortaya çıkan soyut desenler.",
+        "year": "2023"
+      },
+      {
+        "title": "İpek Fısıltılar",
+        "description": "Akan ipek kumaşın dokusunu çağrıştıran, kusursuzca karışan yumuşak pastel tonlar.",
+        "year": "2023"
+      },
+      {
+        "title": "Masmavi Meditasyon",
+        "description": "Sakinleştirici, meditatif bir görsel deneyim yaratan derin maviler ve beyazlar.",
+        "year": "2024"
+      },
+      {
+        "title": "Mercan Günbatımı",
+        "description": "Alacakaranlıkta suluboya bulutlar gibi yayılan sıcak mercan tonları.",
+        "year": "2023"
+      }
+    ]
+  },
+  "photography": {
+    "title": "Fotoğrafçılık",
+    "subtitle": "Işık, yapı ve negatif alanın etkileşimini keşfeden minimalist kompozisyonlar",
+    "photographs": [
+      {
+        "title": "Kentsel Geometri",
+        "description": "Sert mimari çizgiler, ışık ve gölgenin minimalist bir kompozisyonunu yaratıyor.",
+        "year": "2024"
+      },
+      {
+        "title": "Sessiz Tanık",
+        "description": "Anıtsal yapılara karşı yalnız bir figür, ölçek ve izolasyon temalarını keşfediyor.",
+        "year": "2024"
+      },
+      {
+        "title": "Işık Çalışması No. 3",
+        "description": "Geometrik formlardan süzülen doğal ışık, soyut desenler yaratıyor.",
+        "year": "2023"
+      },
+      {
+        "title": "Beton Şiiri",
+        "description": "Kentsel manzaraların ham dokularında ve formlarında güzellik bulmak.",
+        "year": "2023"
+      },
+      {
+        "title": "Yansımalar",
+        "description": "Modern mimaride simetri ve tekrar, yansıtıcı yüzeylerle ikiye katlanıyor.",
+        "year": "2024"
+      },
+      {
+        "title": "Monokrom Rüyalar",
+        "description": "Renk yerine formu vurgulayan yüksek kontrastlı siyah beyaz kompozisyon.",
+        "year": "2023"
+      }
+    ]
+  },
+    "admin": {
+    "login": {
+      "title": "Yönetici Paneli",
+      "subtitle": "Portföyünüzü yönetmek için giriş yapın",
+      "username": "Kullanıcı Adı",
+      "password": "Şifre",
+      "signIn": "Giriş Yap",
+      "invalidCredentials": "Geçersiz kullanıcı adı veya şifre",
+      "demoCredentials": "Demo Giriş Bilgileri:",
+      "backToHome": "Ana Sayfaya Dön"
+    },
+    "dashboard": {
+      "title": "Yönetici Paneli",
+      "viewSite": "Siteyi Görüntüle",
+      "logout": "Çıkış Yap",
+      "totalEbru": "Toplam Ebru Eseri",
+      "totalPhotography": "Toplam Fotoğraf",
+      "totalArtworks": "Toplam Eser",
+      "ebruGallery": "Ebru Galerisi",
+      "ebruDesc": "Ebru marbling eserlerinizi yönetin",
+      "photographyGallery": "Fotoğrafçılık",
+      "photographyDesc": "Fotoğraf koleksiyonunuzu yönetin"
+    },
+    "ebru": {
+      "title": "Ebru Galeri Yönetimi",
+      "addNew": "Yeni Eser Ekle",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "addTitle": "Yeni Eser Ekle",
+      "editTitle": "Eseri Düzenle",
+      "titleEn": "Başlık (İngilizce)",
+      "titleTr": "Başlık (Türkçe)",
+      "descriptionEn": "Açıklama (İngilizce)",
+      "descriptionTr": "Açıklama (Türkçe)",
+      "year": "Yıl",
+      "imageUrl": "Görsel URL",
+      "cancel": "İptal",
+      "add": "Ekle",
+      "update": "Güncelle",
+      "deleteConfirm": "Bu eseri silmek istediğinizden emin misiniz?"
+    },
+    "photography": {
+      "title": "Fotoğraf Yönetimi",
+      "addNew": "Yeni Fotoğraf Ekle",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "addTitle": "Yeni Fotoğraf Ekle",
+      "editTitle": "Fotoğrafı Düzenle",
+      "titleEn": "Başlık (İngilizce)",
+      "titleTr": "Başlık (Türkçe)",
+      "descriptionEn": "Açıklama (İngilizce)",
+      "descriptionTr": "Açıklama (Türkçe)",
+      "year": "Yıl",
+      "imageUrl": "Görsel URL",
+      "cancel": "İptal",
+      "add": "Ekle",
+      "update": "Güncelle",
+      "deleteConfirm": "Bu fotoğrafı silmek istediğinizden emin misiniz?"
+    }
+  }
+}

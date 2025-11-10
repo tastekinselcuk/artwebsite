@@ -1,0 +1,166 @@
+{
+  "nav": {
+    "home": "Home",
+    "ebru": "Ebru Art",
+    "photography": "Photography",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "title": "Where Art",
+      "titleHighlight": "Meets Vision",
+      "subtitle": "Exploring the fluid beauty of Turkish Ebru marbling and the geometric precision of modern photography",
+      "exploreEbru": "Explore Ebru Art",
+      "viewPhoto": "View Photography"
+    },
+    "philosophy": {
+      "title": "Dual Perspectives",
+      "description": "Art is a conversation between tradition and innovation. Through the ancient technique of Ebru marbling and the contemporary lens of photography, I explore the boundaries of visual storytelling—where fluid organic forms dance with geometric precision, and each piece becomes a meditation on duality.",
+      "ebruTitle": "Ebru Marbling",
+      "ebruDesc": "The ancient Turkish art of water marbling, where pigments float on liquid surfaces to create mesmerizing organic patterns—each piece unique, unrepeatable, alive.",
+      "photoTitle": "Photography",
+      "photoDesc": "Capturing moments through a minimalist lens—finding beauty in structure, light, and shadow. Every frame is a deliberate composition of geometry and emotion."
+    }
+  },
+  "about": {
+    "title": "About the Artist",
+    "intro": "I am an artist who bridges worlds—the ancient and the contemporary, the fluid and the structured, the organic and the geometric.",
+    "para1": "Through the centuries-old Turkish art of Ebru marbling, I explore the unpredictable beauty of water and pigment. Each piece is a meditation on impermanence and the acceptance of what emerges from chaos.",
+    "para2": "My photography practice complements this fluidity with deliberate composition—finding poetry in architecture, light, and negative space. Where Ebru embraces spontaneity, photography demands intention. Together, they form a dialogue about control and surrender.",
+    "para3": "Based between tradition and innovation, I create work that invites contemplation and celebrates the duality of the creative process.",
+    "contact": "Get in Touch",
+    "quote": "Art is not about perfection—it's about presence. It's about showing up to the blank page, the still water, the empty frame, and trusting what wants to emerge."
+  },
+    "ebru": {
+    "title": "Ebru Art",
+    "subtitle": "The ancient Turkish art of water marbling, where each piece is a unique conversation between pigment, water, and time",
+    "artworks": [
+      {
+        "title": "Tides of Teal",
+        "description": "A dance of teal and coral pigments on water, creating organic ripples that mirror ocean waves.",
+        "year": "2024"
+      },
+      {
+        "title": "Golden Flow",
+        "description": "Delicate gold leaf suspended in fluid motion, catching light like captured sunbeams.",
+        "year": "2024"
+      },
+      {
+        "title": "Marble Dreams",
+        "description": "Abstract patterns emerging from the unpredictable nature of water and ink.",
+        "year": "2023"
+      },
+      {
+        "title": "Silk Whispers",
+        "description": "Soft pastels blending seamlessly, evoking the texture of flowing silk fabric.",
+        "year": "2023"
+      },
+      {
+        "title": "Azure Meditation",
+        "description": "Deep blues and whites creating a calming, meditative visual experience.",
+        "year": "2024"
+      },
+      {
+        "title": "Coral Sunset",
+        "description": "Warm coral tones spreading like watercolor clouds at dusk.",
+        "year": "2023"
+      }
+    ]
+  },
+    "photography": {
+    "title": "Photography",
+    "subtitle": "Minimalist compositions exploring the interplay of light, structure, and negative space",
+    "photographs": [
+      {
+        "title": "Urban Geometry",
+        "description": "Stark architectural lines create a minimalist composition of light and shadow.",
+        "year": "2024"
+      },
+      {
+        "title": "Silent Witness",
+        "description": "A solitary figure against monumental structures, exploring themes of scale and isolation.",
+        "year": "2024"
+      },
+      {
+        "title": "Light Study No. 3",
+        "description": "Natural light filtered through geometric forms, creating abstract patterns.",
+        "year": "2023"
+      },
+      {
+        "title": "Concrete Poetry",
+        "description": "Finding beauty in the raw textures and forms of urban landscapes.",
+        "year": "2023"
+      },
+      {
+        "title": "Reflections",
+        "description": "Symmetry and repetition in modern architecture, doubled by reflective surfaces.",
+        "year": "2024"
+      },
+      {
+        "title": "Monochrome Dreams",
+        "description": "High contrast black and white composition emphasizing form over color.",
+        "year": "2023"
+      }
+    ]
+  },
+    "admin": {
+    "login": {
+      "title": "Admin Panel",
+      "subtitle": "Sign in to manage your portfolio",
+      "username": "Username",
+      "password": "Password",
+      "signIn": "Sign In",
+      "invalidCredentials": "Invalid username or password",
+      "demoCredentials": "Demo Credentials:",
+      "backToHome": "Back to Home"
+    },
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "viewSite": "View Site",
+      "logout": "Logout",
+      "totalEbru": "Total Ebru Artworks",
+      "totalPhotography": "Total Photographs",
+      "totalArtworks": "Total Artworks",
+      "ebruGallery": "Ebru Gallery",
+      "ebruDesc": "Manage your Ebru marbling artworks",
+      "photographyGallery": "Photography",
+      "photographyDesc": "Manage your photography collection"
+    },
+    "ebru": {
+      "title": "Ebru Gallery Management",
+      "addNew": "Add New Artwork",
+      "edit": "Edit",
+      "delete": "Delete",
+      "addTitle": "Add New Artwork",
+      "editTitle": "Edit Artwork",
+      "titleEn": "Title (English)",
+      "titleTr": "Title (Turkish)",
+      "descriptionEn": "Description (English)",
+      "descriptionTr": "Description (Turkish)",
+      "year": "Year",
+      "imageUrl": "Image URL",
+      "cancel": "Cancel",
+      "add": "Add",
+      "update": "Update",
+      "deleteConfirm": "Are you sure you want to delete this artwork?"
+    },
+    "photography": {
+      "title": "Photography Management",
+      "addNew": "Add New Photo",
+      "edit": "Edit",
+      "delete": "Delete",
+      "addTitle": "Add New Photo",
+      "editTitle": "Edit Photo",
+      "titleEn": "Title (English)",
+      "titleTr": "Title (Turkish)",
+      "descriptionEn": "Description (English)",
+      "descriptionTr": "Description (Turkish)",
+      "year": "Year",
+      "imageUrl": "Image URL",
+      "cancel": "Cancel",
+      "add": "Add",
+      "update": "Update",
+      "deleteConfirm": "Are you sure you want to delete this photo?"
+    }
+  }
+}
