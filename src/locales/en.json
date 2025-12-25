@@ -20,6 +20,30 @@
       "ebruDesc": "The ancient Turkish art of water marbling, where pigments float on liquid surfaces to create mesmerizing organic patterns—each piece unique, unrepeatable, alive.",
       "photoTitle": "Photography",
       "photoDesc": "Capturing moments through a minimalist lens—finding beauty in structure, light, and shadow. Every frame is a deliberate composition of geometry and emotion."
+    },
+    "shop": {
+      "tag": "Online Shop",
+      "title": "Art for Your Home",
+      "description": "Original Ebru artworks, limited edition prints, and exclusive design products.",
+      "viewProduct": "View Product",
+      "viewAll": "View Full Collection",
+      "products": {
+        "silkScarf": {
+          "title": "Turquoise Dream - Silk Scarf",
+          "category": "Apparel & Accessories",
+          "tag": "New Season"
+        },
+        "ebruPainting": {
+          "title": "Battal Ebru Painting (Original)",
+          "category": "Wall Art",
+          "tag": "Unique Piece"
+        },
+        "printSet": {
+          "title": "Istanbul Series - Set of 3",
+          "category": "Fine Art Prints",
+          "tag": ""
+        }
+      }
     }
   },
   "about": {

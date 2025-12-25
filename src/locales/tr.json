@@ -10,16 +10,40 @@
       "title": "Sanat ve Vizyon",
       "titleHighlight": "Buluşuyor",
       "subtitle": "Türk Ebru sanatının akışkan güzelliği ile modern fotoğrafçılığın geometrik hassasiyetini keşfedin",
-      "exploreEbru": "Ebru Sanatını Keşfet",
+      "exploreEbru": "Ebru Eserlerini Keşfet",
       "viewPhoto": "Fotoğrafları İncele"
     },
     "philosophy": {
       "title": "İkili Perspektifler",
       "description": "Sanat, gelenek ve yenilik arasında bir konuşmadır. Antik Ebru marbling tekniği ve çağdaş fotoğrafçılık merceği aracılığıyla görsel hikaye anlatımının sınırlarını keşfediyorum—akışkan organik formların geometrik hassasiyetle dans ettiği ve her parçanın ikiliğe dair bir meditasyona dönüştüğü yer.",
       "ebruTitle": "Ebru Sanatı",
-      "ebruDesc": "Su üzerinde pigmentlerin yüzdüğü, büyüleyici organik desenler yaratan antik Türk su süsleme sanatı—her eser benzersiz, tekrarlanamaz, canlı.",
+      "ebruDesc": "Su üzerinde pigmentlerin yüzdüğü, büyüleyici organik desenler yaratan antik Türk su süsleme sanatı. Her eser benzersiz, tekrarlanamaz, canlı.",
       "photoTitle": "Fotoğrafçılık",
-      "photoDesc": "Minimalist bir mercekle anları yakalamak—yapı, ışık ve gölgede güzelliği bulmak. Her kare, geometri ve duygunun kasıtlı bir kompozisyonudur."
+      "photoDesc": "Minimalist bir mercekle anları yakalayarak, ışık ve gölgede güzelliği bulmak. Her kare, geometri ve duygunun kasıtlı bir kompozisyonudur."
+    },
+    "shop": {
+      "tag": "Online Mağaza",
+      "title": "Sanatın Evinize Dokunuşu",
+      "description": "Orijinal ebru çalışmaları, limitli basım fotoğraflar ve özel tasarım ürünler.",
+      "viewProduct": "Ürünü İncele",
+      "viewAll": "Tüm Koleksiyonu Görüntüle",
+      "products": {
+        "silkScarf": {
+          "title": "Turkuaz Rüya - İpek Şal",
+          "category": "Giyim & Aksesuar",
+          "tag": "Yeni Sezon"
+        },
+        "ebruPainting": {
+          "title": "Battal Ebru Tablo (Orijinal)",
+          "category": "Duvar Sanatı",
+          "tag": "Tek Eser"
+        },
+        "printSet": {
+          "title": "İstanbul Serisi - 3'lü Set",
+          "category": "Fine Art Baskı",
+          "tag": ""
+        }
+      }
     }
   },
   "about": {
