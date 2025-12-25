@@ -1,7 +1,6 @@
 <template>
-  <nav class="fixed top-8 right-8 z-50">
+  <nav v-if="!isAdminPage" class="fixed top-8 right-8 z-50">
     <div class="relative">
-      <!-- Hamburger Button -->
       <button
         @click="isOpen = !isOpen"
         class="w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
@@ -29,7 +28,6 @@
         </div>
       </button>
 
-      <!-- Menu Items -->
       <div
         :class="[
           'absolute top-20 right-0 flex flex-col gap-3 transition-all duration-500',
@@ -49,7 +47,6 @@
           <span class="font-medium">{{ t(item.label) }}</span>
         </router-link>
 
-        <!-- Language Switcher -->
         <div class="flex gap-2 px-5 py-3">
           <button
             @click="changeLanguage('tr')"
@@ -83,10 +80,20 @@
 import { ref, computed } from 'vue'
 import { Home, Droplet, Camera, User } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
+// GÜNCELLEME: useRoute import edildi
+import { useRoute } from 'vue-router'
 
 const { t, locale } = useI18n()
 const isOpen = ref(false)
 const currentLocale = computed(() => locale.value)
+// GÜNCELLEME: Route tanımlandı
+const route = useRoute()
+
+// GÜNCELLEME: Admin sayfası kontrolü
+// URL '/admin' ile başlıyorsa (login, dashboard, settings vs.) true döner.
+const isAdminPage = computed(() => {
+  return route.path.startsWith('/admin')
+})
 
 const navItems = [
   { to: '/', icon: Home, label: 'nav.home' },
