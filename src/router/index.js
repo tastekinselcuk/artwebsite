@@ -11,6 +11,7 @@ import AdminDashboard from '../pages/AdminDashboard.vue'
 import AdminEbru from '../pages/AdminEbru.vue'
 import AdminPhotography from '../pages/AdminPhotography.vue'
 import AdminSettings from '../pages/AdminSettings.vue'
+import ContentSettings from '../pages/ContentSettings.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +63,12 @@ const router = createRouter({
       path: '/admin/settings',
       name: 'admin-settings',
       component: AdminSettings,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/admin/content',
+      name: 'AdminContent',
+      component: ContentSettings,
       meta: { requiresAuth: true }
     }
   ]

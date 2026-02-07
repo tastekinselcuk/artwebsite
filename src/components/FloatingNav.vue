@@ -10,19 +10,16 @@
           <span
             :class="[
               'block w-5 h-0.5 bg-current transition-transform',
-              isOpen ? 'rotate-45 translate-y-2' : ''
+              isOpen ? 'rotate-45 translate-y-2' : '',
             ]"
           />
           <span
-            :class="[
-              'block w-5 h-0.5 bg-current transition-opacity',
-              isOpen ? 'opacity-0' : ''
-            ]"
+            :class="['block w-5 h-0.5 bg-current transition-opacity', isOpen ? 'opacity-0' : '']"
           />
           <span
             :class="[
               'block w-5 h-0.5 bg-current transition-transform',
-              isOpen ? '-rotate-45 -translate-y-2' : ''
+              isOpen ? '-rotate-45 -translate-y-2' : '',
             ]"
           />
         </div>
@@ -31,9 +28,7 @@
       <div
         :class="[
           'absolute top-20 right-0 flex flex-col gap-3 transition-all duration-500',
-          isOpen
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
+          isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none',
         ]"
       >
         <router-link
@@ -41,20 +36,20 @@
           :key="item.to"
           :to="item.to"
           @click="isOpen = false"
-          class="flex items-center gap-3 px-5 py-3 rounded-full bg-card text-card-foreground shadow-md hover:shadow-lg transition-all duration-300 hover-lift group"
+          class="flex items-center gap-3 px-5 py-3 rounded-full bg-card text-card-foreground shadow-md hover:shadow-lg transition-all duration-300 hover-lift group whitespace-nowrap"
         >
           <component :is="item.icon" class="w-5 h-5 text-primary" />
           <span class="font-medium">{{ t(item.label) }}</span>
         </router-link>
 
-        <div class="flex gap-2 px-5 py-3">
+        <div class="flex gap-1 px-5 py-1 -mt-2 justify-end">
           <button
             @click="changeLanguage('tr')"
             :class="[
-              'px-3 py-1 rounded-lg text-sm font-medium transition-all',
+              'px-3 py-1 rounded-lg text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-md',
               currentLocale === 'tr'
                 ? 'bg-primary text-primary-foreground'
-                : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                : 'bg-muted text-muted-foreground hover:bg-muted/80',
             ]"
           >
             TR
@@ -62,10 +57,10 @@
           <button
             @click="changeLanguage('en')"
             :class="[
-              'px-3 py-1 rounded-lg text-sm font-medium transition-all',
+              'px-3 py-1 rounded-lg text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-md',
               currentLocale === 'en'
                 ? 'bg-primary text-primary-foreground'
-                : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                : 'bg-muted text-muted-foreground hover:bg-muted/80',
             ]"
           >
             EN
@@ -77,33 +72,30 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { Home, Droplet, Camera, User } from 'lucide-vue-next'
-import { useI18n } from 'vue-i18n'
-// GÜNCELLEME: useRoute import edildi
-import { useRoute } from 'vue-router'
+import { ref, computed } from "vue";
+import { Home, Droplet, Camera, User } from "lucide-vue-next";
+import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 
-const { t, locale } = useI18n()
-const isOpen = ref(false)
-const currentLocale = computed(() => locale.value)
-// GÜNCELLEME: Route tanımlandı
-const route = useRoute()
+const { t, locale } = useI18n();
+const isOpen = ref(false);
+const currentLocale = computed(() => locale.value);
+const route = useRoute();
 
-// GÜNCELLEME: Admin sayfası kontrolü
 // URL '/admin' ile başlıyorsa (login, dashboard, settings vs.) true döner.
 const isAdminPage = computed(() => {
-  return route.path.startsWith('/admin')
-})
+  return route.path.startsWith("/admin");
+});
 
 const navItems = [
-  { to: '/', icon: Home, label: 'nav.home' },
-  { to: '/ebru', icon: Droplet, label: 'nav.ebru' },
-  { to: '/photography', icon: Camera, label: 'nav.photography' },
-  { to: '/about', icon: User, label: 'nav.about' },
-]
+  { to: "/", icon: Home, label: "nav.home" },
+  { to: "/ebru", icon: Droplet, label: "nav.ebruGallery" },
+  { to: "/photography", icon: Camera, label: "nav.ebruShop" },
+  { to: "/about", icon: User, label: "nav.about" },
+];
 
 const changeLanguage = (lang) => {
-  locale.value = lang
-  localStorage.setItem('language', lang)
-}
+  locale.value = lang;
+  localStorage.setItem("language", lang);
+};
 </script>

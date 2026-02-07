@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "ebru": "Ebru Art",
-    "photography": "Photography",
+    "ebruGallery": "Gallery",
+    "ebruShop": "Shop",
     "about": "About"
   },
   "home": {
@@ -14,12 +14,12 @@
       "viewPhoto": "View Photography"
     },
     "philosophy": {
-      "title": "Dual Perspectives",
-      "description": "Art is a conversation between tradition and innovation. Through the ancient technique of Ebru marbling and the contemporary lens of photography, I explore the boundaries of visual storytelling—where fluid organic forms dance with geometric precision, and each piece becomes a meditation on duality.",
-      "ebruTitle": "Ebru Marbling",
-      "ebruDesc": "The ancient Turkish art of water marbling, where pigments float on liquid surfaces to create mesmerizing organic patterns—each piece unique, unrepeatable, alive.",
-      "photoTitle": "Photography",
-      "photoDesc": "Capturing moments through a minimalist lens—finding beauty in structure, light, and shadow. Every frame is a deliberate composition of geometry and emotion."
+      "title": "View & Collect",
+      "description": "Ebru art is not just a visual feast to be observed, but a touch that adds soul to living spaces. Explore the works formed by the fluidity of water on one side, and make these unique pieces a part of your life on the other.",
+      "galleryTitle": "Ebru Gallery",
+      "galleryDesc": "Wander through our digital exhibition of colors dancing on water. Explore modern compositions blended with traditional techniques, where each piece is unique and unrepeatable.",
+      "shopTitle": "Art Shop",
+      "shopDesc": "Bring the mesmerizing atmosphere of Ebru art into your home or office. Browse our collection of original artworks and own a unique piece of living art."
     },
     "shop": {
       "tag": "Online Shop",
@@ -55,9 +55,10 @@
     "contact": "Get in Touch",
     "quote": "Art is not about perfection—it's about presence. It's about showing up to the blank page, the still water, the empty frame, and trusting what wants to emerge."
   },
-    "ebru": {
+  "ebru": {
     "title": "Ebru Art",
     "subtitle": "The ancient Turkish art of water marbling, where each piece is a unique conversation between pigment, water, and time",
+    "collectionBadge": "Ebru Collection",
     "artworks": [
       {
         "title": "Tides of Teal",
@@ -91,9 +92,10 @@
       }
     ]
   },
-    "photography": {
+  "photography": {
     "title": "Photography",
     "subtitle": "Minimalist compositions exploring the interplay of light, structure, and negative space",
+    "collectionBadge": "Photography Collection",
     "photographs": [
       {
         "title": "Urban Geometry",
@@ -127,7 +129,7 @@
       }
     ]
   },
-    "admin": {
+  "admin": {
     "login": {
       "title": "Admin Panel",
       "subtitle": "Sign in to manage your portfolio",
@@ -186,5 +188,11 @@
       "update": "Update",
       "deleteConfirm": "Are you sure you want to delete this photo?"
     }
+  },
+  "gallery": {
+    "loadingError": "Failed to load gallery. Please try again.",
+    "noDataTitle": "No items found",
+    "noDataDesc": "There are no items to display at the moment.",
+    "views": "views"
   }
 }

@@ -1,30 +1,30 @@
 {
   "nav": {
     "home": "Ana Sayfa",
-    "ebru": "Ebru Sanatı",
-    "photography": "Fotoğrafçılık",
+    "ebruGallery": "Galeri",
+    "ebruShop": "Mağaza",
     "about": "Hakkımda"
   },
   "home": {
     "hero": {
-      "title": "Sanat ve Vizyon",
-      "titleHighlight": "Buluşuyor",
-      "subtitle": "Türk Ebru sanatının akışkan güzelliği ile modern fotoğrafçılığın geometrik hassasiyetini keşfedin",
+      "title": "Sarpé",
+      "titleHighlight": "Atelier",
+      "subtitle": "Türk Ebru sanatının büyüleyici güzelliğini keşfedin",
       "exploreEbru": "Ebru Eserlerini Keşfet",
       "viewPhoto": "Fotoğrafları İncele"
     },
     "philosophy": {
-      "title": "İkili Perspektifler",
-      "description": "Sanat, gelenek ve yenilik arasında bir konuşmadır. Antik Ebru marbling tekniği ve çağdaş fotoğrafçılık merceği aracılığıyla görsel hikaye anlatımının sınırlarını keşfediyorum—akışkan organik formların geometrik hassasiyetle dans ettiği ve her parçanın ikiliğe dair bir meditasyona dönüştüğü yer.",
-      "ebruTitle": "Ebru Sanatı",
-      "ebruDesc": "Su üzerinde pigmentlerin yüzdüğü, büyüleyici organik desenler yaratan antik Türk su süsleme sanatı. Her eser benzersiz, tekrarlanamaz, canlı.",
-      "photoTitle": "Fotoğrafçılık",
-      "photoDesc": "Minimalist bir mercekle anları yakalayarak, ışık ve gölgede güzelliği bulmak. Her kare, geometri ve duygunun kasıtlı bir kompozisyonudur."
+      "title": "Sanat",
+      "description": "Ebru, suyun üzerinde doğan ve bir daha asla tekrarlanmayan bir mucizedir. Her eser tek ve eşsizdir; tıpkı onu seçen kişi gibi. Ebru, kontrol ile teslimiyet arasındaki ince dengedir. Sanatçı yön verir, fakat son sözü her zaman su söyler. Bu yüzden her ebru çalışması, anın ruhunu taşıyan tek ve tekrar edilemez bir izdir. Yüzyıllardır sabır, zarafet ve ustalıkla yaşatılan ebru sanatı; mekânlara yalnızca estetik değil, ruh katar. Her çalışma el yapımıdır, her fırça izi bir anın izini taşır. Yaşam alanlarınıza sessiz bir ihtişam ve derinlik katan zamansız bir dokunuş…",
+      "galleryTitle": "Ebru Galerisi",
+      "galleryDesc": "Su üzerinde pigmentlerin yüzdüğü, büyüleyici organik desenler yaratan antik Türk su süsleme sanatı. Her eser benzersiz, tekrarlanamaz, canlı.",
+      "shopTitle": "Eser Mağazası",
+      "shopDesc": "Ebru sanatının büyüleyici atmosferini evinize veya ofisinize taşıyın. Orijinal eserlerden oluşan koleksiyonumuzdan dilediğinizi satın alın ve sanata sahip olun."
     },
     "shop": {
       "tag": "Online Mağaza",
       "title": "Sanatın Evinize Dokunuşu",
-      "description": "Orijinal ebru çalışmaları, limitli basım fotoğraflar ve özel tasarım ürünler.",
+      "description": "Orijinal ebru çalışmaları ve kişiye özel tasarım ürünler.",
       "viewProduct": "Ürünü İncele",
       "viewAll": "Tüm Koleksiyonu Görüntüle",
       "products": {
@@ -48,16 +48,17 @@
   },
   "about": {
     "title": "Sanatçı Hakkında",
-    "intro": "Dünyalar arasında köprü kuran bir sanatçıyım—antik ve çağdaş, akışkan ve yapısal, organik ve geometrik.",
-    "para1": "Yüzyıllar eski Türk Ebru sanatı aracılığıyla, su ve pigmentin öngörülemez güzelliğini keşfediyorum. Her eser, geçicilik ve kaostan doğanı kabul etme üzerine bir meditasyondur.",
-    "para2": "Fotoğrafçılık pratiğim bu akışkanlığı kasıtlı kompozisyonla tamamlıyor—mimari, ışık ve negatif alanda şiiri buluyorum. Ebru kendiliğindenliği kucaklarken, fotoğrafçılık niyet ister. Birlikte kontrol ve teslimiyete dair bir diyalog oluşturuyorlar.",
-    "para3": "Gelenek ve yenilik arasında konumlanarak, düşünceye davet eden ve yaratıcı sürecin ikiliğini kutlayan işler yaratıyorum.",
+    "intro": "Zehra Sarp, geleneksel ebru sanatını çağdaş bir estetik anlayışla yorumlayan bir sanatçıdır.",
+    "para1": "Çalışmalarında suyun doğal akışını ustalıkla yönlendirirken, her eserde sabır, denge ve incelikle kurulan bir görsel dil yaratır. Onun için ebru yalnızca bir teknik değil; zamanla kurulan derin bir diyalogdur.",
+    "para2": "Yıllara dayanan pratiği boyunca geliştirdiği özgün yaklaşım, her çalışmayı tek ve tekrar edilemez kılar. Eserleri, suyun yüzeyinde başlayan bir hareketin kâğıt üzerinde kalıcı bir iz bırakmasıdır. Anın estetiğini zamansız bir forma dönüştüren bir imza.",
+    "para3": "Sanatçı, gelenekten aldığı ilhamı modern yaşam alanlarına taşıyarak ebruyu yaşayan bir sanat olarak sunmaya devam etmektedir.",
     "contact": "İletişime Geçin",
     "quote": "Sanat mükemmellikle ilgili değil—varoluşla ilgili. Boş sayfaya, durgun suya, boş çerçeveye gelmek ve ortaya çıkmak isteyene güvenmekle ilgili."
   },
-    "ebru": {
+  "ebru": {
     "title": "Ebru Sanatı",
     "subtitle": "Her parçanın pigment, su ve zaman arasında benzersiz bir konuşma olduğu antik Türk su süsleme sanatı",
+    "collectionBadge": "Ebru Koleksiyonu",
     "artworks": [
       {
         "title": "Turkuaz Dalgalar",
@@ -94,6 +95,7 @@
   "photography": {
     "title": "Fotoğrafçılık",
     "subtitle": "Işık, yapı ve negatif alanın etkileşimini keşfeden minimalist kompozisyonlar",
+    "collectionBadge": "Fotoğraf Koleksiyonu",
     "photographs": [
       {
         "title": "Kentsel Geometri",
@@ -127,7 +129,7 @@
       }
     ]
   },
-    "admin": {
+  "admin": {
     "login": {
       "title": "Yönetici Paneli",
       "subtitle": "Portföyünüzü yönetmek için giriş yapın",
@@ -186,5 +188,11 @@
       "update": "Güncelle",
       "deleteConfirm": "Bu fotoğrafı silmek istediğinizden emin misiniz?"
     }
+  },
+  "gallery": {
+    "loadingError": "Galeri yüklenirken hata oluştu. Lütfen tekrar deneyin.",
+    "noDataTitle": "Gösterilecek öğe yok",
+    "noDataDesc": "Şu anda gösterilecek öğe bulunmuyor.",
+    "views": "görüntülenme"
   }
 }

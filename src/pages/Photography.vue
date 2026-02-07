@@ -17,7 +17,7 @@
       </div>
 
       <div v-else-if="galleryStore.error" class="text-center py-20 bg-destructive/5 rounded-2xl border border-destructive/10">
-        <p class="text-xl text-destructive font-medium mb-2">Veriler yüklenirken bir sorun oluştu.</p>
+        <p class="text-xl text-destructive font-medium mb-2">{{ t('gallery.loadingError') }}</p>
         <p class="text-sm text-muted-foreground">{{ galleryStore.error }}</p>
       </div>
 
@@ -61,8 +61,8 @@
         <div class="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
           <Camera class="w-8 h-8 text-muted-foreground" />
         </div>
-        <p class="text-xl font-display">Henüz fotoğraf yüklenmemiş.</p>
-        <p class="text-sm text-muted-foreground mt-2">Admin panelinden yeni fotoğraf ekleyebilirsiniz.</p>
+        <p class="text-xl font-display">{{ t('gallery.noDataTitle') }}</p>
+        <p class="text-sm text-muted-foreground mt-2">{{ t('gallery.noDataDesc') }}</p>
       </div>
     </div>
 
@@ -79,10 +79,7 @@
           v-if="selectedPhoto"
           class="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-8"
         >
-          <div
-            class="absolute inset-0 bg-background/90 backdrop-blur-xl transition-opacity"
-            @click="selectedPhoto = null"
-          ></div>
+          <div class="absolute inset-0 bg-background/90 backdrop-blur-xl transition-opacity" @click="selectedPhoto = null"></div>
 
           <Transition
             appear
@@ -93,10 +90,7 @@
             leave-from-class="opacity-100 scale-100"
             leave-to-class="opacity-0 scale-95 translate-y-4"
           >
-            <div
-              class="relative w-full max-w-6xl bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/50 grid md:grid-cols-2 max-h-[90vh] transform origin-center"
-              @click.stop
-            >
+            <div class="relative w-full max-w-6xl bg-card rounded-2xl shadow-2xl overflow-hidden border border-border/50 grid md:grid-cols-2 max-h-[90vh] transform origin-center" @click.stop>
 
               <button
                 @click="selectedPhoto = null"
@@ -117,7 +111,7 @@
                 <div class="space-y-6">
                   <div>
                     <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
-                      Photography Collection
+                      {{ t('photography.collectionBadge') }}
                     </span>
                     <h2 class="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight">
                       {{ currentLocale === 'en' ? selectedPhoto.title.en : selectedPhoto.title.tr }}
@@ -131,7 +125,7 @@
                     </div>
                     <div class="flex items-center gap-2">
                       <Eye class="w-4 h-4" />
-                      <span>{{ selectedPhoto.views }} Görüntülenme</span>
+                      <span>{{ selectedPhoto.views }} {{ t('gallery.views') }}</span>
                     </div>
                   </div>
 
@@ -180,7 +174,6 @@ const openPhoto = async (photo) => {
 </script>
 
 <style scoped>
-/* Basit ve Garantili Animasyon */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
