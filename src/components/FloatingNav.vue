@@ -1,5 +1,9 @@
 <template>
-  <nav v-if="!isAdminPage" class="fixed top-8 right-8 z-50">
+  <nav v-if="!isAdminPage" class="fixed top-8 right-8 z-50 flex items-start gap-4">
+    <!-- Cart Dropdown -->
+    <CartDropdown />
+
+    <!-- Main Menu -->
     <div class="relative">
       <button
         @click="isOpen = !isOpen"
@@ -76,6 +80,7 @@ import { ref, computed } from "vue";
 import { Home, Droplet, Camera, User } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
+import CartDropdown from "@/components/CartDropdown.vue";
 
 const { t, locale } = useI18n();
 const isOpen = ref(false);

@@ -31,19 +31,87 @@
         "silkScarf": {
           "title": "Turkuaz Rüya - İpek Şal",
           "category": "Giyim & Aksesuar",
+          "description": "Orijinal ebru sanatından uyarlanan ipek şal. Herhangi bir kıyafete zarafet katmak için mükemmel.",
           "tag": "Yeni Sezon"
         },
         "ebruPainting": {
           "title": "Battal Ebru Tablo (Orijinal)",
           "category": "Duvar Sanatı",
+          "description": "Kâğıda el ile yapılmış orijinal eser. Her parça tamamen benzersiz ve tekrar edilemez.",
           "tag": "Tek Eser"
         },
         "printSet": {
           "title": "İstanbul Serisi - 3'lü Set",
           "category": "Fine Art Baskı",
+          "description": "İstanbul mimarisi serimizden sınırlı baskı seti.",
+          "tag": ""
+        },
+        "ebruNotebook": {
+          "title": "Ebru Desenlı Defter",
+          "category": "Kırtasiye & Aksesuar",
+          "description": "Orijinal ebru kapağı olan premium defter. Günlük yazı veya çizim için mükemmel.",
+          "tag": "Mükemmel Hediye"
+        },
+        "ebruCanvas": {
+          "title": "Tuval Baskı - Büyük Boy",
+          "category": "Duvar Sanatı",
+          "description": "İmza ebrusu kompozisyonlarımızın yüksek kaliteli tuval baskısı. Müze kalitesi malzeme.",
+          "tag": "Müze Kalitesi"
+        },
+        "photographyBook": {
+          "title": "Salon Masası Fotoğraf Kitabı",
+          "category": "Kitaplar & Yayınlar",
+          "description": "Mimari fotoğraf çalışmalarımızın güzel basılı koleksiyonu.",
           "tag": ""
         }
       }
+    }
+  },
+  "shop": {
+    "products": {
+      "title": "Tüm Ürünleri Satın Al"
+    },
+    "filters": {
+      "title": "Filtrele",
+      "all": "Tüm Ürünler",
+      "apparel": "Giyim",
+      "wallart": "Duvar Sanatı",
+      "prints": "Baskılar",
+      "accessories": "Aksesuar"
+    },
+    "sort": {
+      "title": "Sırala",
+      "newest": "En Yeni",
+      "popular": "En Popüler",
+      "priceLow": "Fiyat: Düşükten Yükseğe",
+      "priceHigh": "Fiyat: Yüksekten Düşüğe",
+      "rating": "En Yüksek Puan"
+    },
+    "filterPrice": "Fiyata Göre Filtrele",
+    "from": "Başlangıç",
+    "to": "Bitiş",
+    "searchPlaceholder": "Ürün ara...",
+    "resultSingular": "ürün bulundu",
+    "resultPlural": "ürün bulundu",
+    "viewDetails": "Detayları Gör",
+    "inStock": "stok var",
+    "outOfStock": "Tükenmiş",
+    "addToCart": "Sepete Ekle",
+    "noResults": "Ürün bulunamadı",
+    "tryAdjustingFilters": "Filtrelerinizi veya arama kriterlerinizi ayarlamayı deneyin",
+    "resetFilters": "Filtreleri Sıfırla",
+    "addedToCart": "Eklendi!",
+    "cart": {
+      "title": "Alışveriş Sepeti",
+      "empty": "Sepetiniz boş",
+      "continueShopping": "Alışverişe Devam Et",
+      "subtotal": "Ara Toplam",
+      "tax": "Vergi",
+      "shipping": "Kargo",
+      "free": "ÜCRETSİZ",
+      "total": "Toplam",
+      "checkout": "Ödemeye Geç",
+      "freeShippingThreshold": "250 TL üzeri siparişlerde kargo ücretsiz"
     }
   },
   "about": {
@@ -194,5 +262,22 @@
     "noDataTitle": "Gösterilecek öğe yok",
     "noDataDesc": "Şu anda gösterilecek öğe bulunmuyor.",
     "views": "görüntülenme"
+  },
+  "orderSuccess": {
+    "title": "Siparişiniz Onaylandı!",
+    "message": "Satın almaktan dolayı teşekkür ederiz. Siparişiniz başarıyla oluşturulmuştur.",
+    "orderNumber": "Sipariş Numarası",
+    "totalAmount": "Toplam Tutar",
+    "estimatedDelivery": "Tahmini Teslimat",
+    "confirmationEmail": "Onay E-postası",
+    "emailMessage": "Onay e-postası adresinize gönderilmiştir",
+    "whatNext": "Sırada Ne Var?",
+    "step1": "Siparişinizi işleyeceğiz ve ürünlerinizi hazırlayacağız",
+    "step2": "Gönderi bilgisi ile birlikte kargo bildirimi alacaksınız",
+    "step3": "Paketiniz 5-7 iş günü içinde teslim edilecektir",
+    "continueShopping": "Alışveriş Devam Et",
+    "backHome": "Ana Sayfaya Dön",
+    "needHelp": "Yardıma mı ihtiyacınız var?",
+    "contactSupport": "Destek ekibi ile iletişime geçin"
   }
 }

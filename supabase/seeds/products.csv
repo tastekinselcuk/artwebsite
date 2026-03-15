@@ -1,0 +1,7 @@
+id,title_key,category_key,description_key,tag_key,price,stock,image,category,featured,rating,reviews,is_active
+1,shop.products.silkScarf.title,apparel,shop.products.silkScarf.description,shop.products.silkScarf.tag,450.00,15,https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop,Apparel & Accessories,true,5.0,12,true
+2,shop.products.ebruPainting.title,wallart,shop.products.ebruPainting.description,shop.products.ebruPainting.tag,1200.00,3,https://images.unsplash.com/photo-1549887534-7eb66b829e10?w=500&h=500&fit=crop,Wall Art,true,5.0,8,true
+3,shop.products.printSet.title,prints,shop.products.printSet.description,shop.products.printSet.tag,350.00,20,https://images.unsplash.com/photo-1579783902614-e3fb5141b0cb?w=500&h=500&fit=crop,Fine Art Prints,false,4.8,5,true
+4,shop.products.ebruNotebook.title,accessories,shop.products.ebruNotebook.description,shop.products.ebruNotebook.tag,89.99,30,https://images.unsplash.com/photo-1507842217343-583f20270319?w=500&h=500&fit=crop,Accessories,true,4.9,15,true
+5,shop.products.wallArt.title,wallart,shop.products.wallArt.description,shop.products.wallArt.tag,650.00,5,https://images.unsplash.com/photo-1561214115-6d2f1b0609fa?w=500&h=500&fit=crop,Wall Art,false,5.0,6,true
+6,shop.products.giftSet.title,accessories,shop.products.giftSet.description,shop.products.giftSet.tag,280.00,25,https://images.unsplash.com/photo-1549887534-7eb66b829e10?w=500&h=500&fit=crop,Accessories,false,4.7,9,true

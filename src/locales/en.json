@@ -31,19 +31,87 @@
         "silkScarf": {
           "title": "Turquoise Dream - Silk Scarf",
           "category": "Apparel & Accessories",
+          "description": "Handcrafted silk scarf featuring authentic Ebru marbling. Perfect for adding elegance to any outfit.",
           "tag": "New Season"
         },
         "ebruPainting": {
           "title": "Battal Ebru Painting (Original)",
           "category": "Wall Art",
+          "description": "Original hand-marbled artwork on paper. Each piece is absolutely unique and unrepeatable.",
           "tag": "Unique Piece"
         },
         "printSet": {
           "title": "Istanbul Series - Set of 3",
           "category": "Fine Art Prints",
+          "description": "Limited edition fine art prints from our Istanbul architectural series.",
+          "tag": ""
+        },
+        "ebruNotebook": {
+          "title": "Ebru-Decorated Notebook",
+          "category": "Stationery & Accessories",
+          "description": "Premium notebook with authentic Ebru marbled cover. Perfect for journaling or sketching.",
+          "tag": "Perfect Gift"
+        },
+        "ebruCanvas": {
+          "title": "Canvas Print - Large Format",
+          "category": "Wall Art",
+          "description": "High-quality canvas reproduction of our signature Ebru compositions. Museum-grade materials.",
+          "tag": "Museum Quality"
+        },
+        "photographyBook": {
+          "title": "Coffee Table Photography Book",
+          "category": "Books & Publications",
+          "description": "Beautifully printed collection of our architectural photography works.",
           "tag": ""
         }
       }
+    }
+  },
+  "shop": {
+    "products": {
+      "title": "Shop All Products"
+    },
+    "filters": {
+      "title": "Filter",
+      "all": "All Products",
+      "apparel": "Apparel",
+      "wallart": "Wall Art",
+      "prints": "Prints",
+      "accessories": "Accessories"
+    },
+    "sort": {
+      "title": "Sort By",
+      "newest": "Newest",
+      "popular": "Most Popular",
+      "priceLow": "Price: Low to High",
+      "priceHigh": "Price: High to Low",
+      "rating": "Highest Rated"
+    },
+    "filterPrice": "Filter by Price",
+    "from": "From",
+    "to": "To",
+    "searchPlaceholder": "Search products...",
+    "resultSingular": "product found",
+    "resultPlural": "products found",
+    "viewDetails": "View Details",
+    "inStock": "in stock",
+    "outOfStock": "Out of Stock",
+    "addToCart": "Add to Cart",
+    "noResults": "No products found",
+    "tryAdjustingFilters": "Try adjusting your filters or search criteria",
+    "resetFilters": "Reset Filters",
+    "addedToCart": "Added!",
+    "cart": {
+      "title": "Shopping Cart",
+      "empty": "Your cart is empty",
+      "continueShopping": "Continue Shopping",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "shipping": "Shipping",
+      "free": "FREE",
+      "total": "Total",
+      "checkout": "Checkout",
+      "freeShippingThreshold": "Free shipping for orders over 250 TL"
     }
   },
   "about": {
@@ -194,5 +262,22 @@
     "noDataTitle": "No items found",
     "noDataDesc": "There are no items to display at the moment.",
     "views": "views"
+  },
+  "orderSuccess": {
+    "title": "Order Confirmed!",
+    "message": "Thank you for your purchase. Your order has been placed successfully.",
+    "orderNumber": "Order Number",
+    "totalAmount": "Total Amount",
+    "estimatedDelivery": "Estimated Delivery",
+    "confirmationEmail": "Confirmation Email",
+    "emailMessage": "A confirmation email has been sent to your address",
+    "whatNext": "What's Next?",
+    "step1": "We will process your order and prepare your items",
+    "step2": "You will receive a shipping notification with tracking details",
+    "step3": "Your package will be delivered within 5-7 business days",
+    "continueShopping": "Continue Shopping",
+    "backHome": "Back to Home",
+    "needHelp": "Need help?",
+    "contactSupport": "Contact our support team"
   }
 }
