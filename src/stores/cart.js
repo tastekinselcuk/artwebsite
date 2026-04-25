@@ -47,7 +47,7 @@ export const useCartStore = defineStore("cart", () => {
       } else {
         items.value.push({
           id: product.id,
-          titleKey: product.titleKey,
+          title: product.title,
           price: product.price,
           image: product.image,
           quantity: 1,
@@ -131,7 +131,7 @@ export const useCartStore = defineStore("cart", () => {
     localStorage.setItem("cart", JSON.stringify(items.value));
   };
 
-  // Supabase'e sepeti kaydet (Oturum açmış kullanıcılar için)
+// Supabase'e sepeti kaydet (Oturum açmış kullanıcılar için)
   const saveCartToSupabase = async () => {
     const authStore = useAuthStore();
 
@@ -141,17 +141,6 @@ export const useCartStore = defineStore("cart", () => {
     error.value = null;
 
     try {
-      // Mevcut sepeti kontrol et
-      const { data: existingCart, error: fetchError } = await supabase
-        .from("shopping_carts")
-        .select("id")
-        .eq("user_id", authStore.user.id)
-        .single();
-
-      if (fetchError && fetchError.code !== "PGRST116") {
-        throw fetchError;
-      }
-
       const cartData = {
         user_id: authStore.user.id,
         items: items.value,
@@ -160,20 +149,15 @@ export const useCartStore = defineStore("cart", () => {
         updated_at: new Date(),
       };
 
-      if (existingCart) {
-        // Güncelle
-        const { error: updateError } = await supabase
-          .from("shopping_carts")
-          .update(cartData)
-          .eq("user_id", authStore.user.id);
+      // UPSERT KULLANIMI: 
+      // user_id tablomuzda "unique" (benzersiz) olduğu için, 
+      // eğer bu user_id'ye ait satır varsa günceller, yoksa yeni satır ekler.
+      const { error: upsertError } = await supabase
+        .from("shopping_carts")
+        .upsert(cartData, { onConflict: 'user_id' });
 
-        if (updateError) throw updateError;
-      } else {
-        // Yeni sepet oluştur
-        const { error: insertError } = await supabase.from("shopping_carts").insert([cartData]);
+      if (upsertError) throw upsertError;
 
-        if (insertError) throw insertError;
-      }
     } catch (e) {
       console.error("Error saving cart to Supabase:", e);
       error.value = "Sepet kaydedilirken hata oluştu";

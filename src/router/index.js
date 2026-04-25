@@ -1,13 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 
-// Sayfa importların (Senin kodundaki gibi)
+// Sayfa importların
 import Home from "../pages/Home.vue";
 import About from "../pages/About.vue";
 import Ebru from "../pages/Ebru.vue";
 import Photography from "../pages/Photography.vue";
 import Shop from "../pages/Shop.vue";
 import AdminLogin from "../pages/AdminLogin.vue";
+// YENİ: Şifre güncelleme sayfasını import ediyoruz
+import AdminUpdatePassword from "../pages/AdminUpdatePassword.vue";
 import AdminDashboard from "../pages/AdminDashboard.vue";
 import AdminEbru from "../pages/AdminEbru.vue";
 import AdminPhotography from "../pages/AdminPhotography.vue";
@@ -16,6 +18,7 @@ import AdminShop from "../pages/AdminShop.vue";
 import ContentSettings from "../pages/ContentSettings.vue";
 import Checkout from "../pages/Checkout.vue";
 import OrderSuccess from "../pages/OrderSuccess.vue";
+import ProductDetail from "../pages/ProductDetail.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +65,12 @@ const router = createRouter({
       name: "admin-login",
       component: AdminLogin,
     },
+    // YENİ: Şifre Güncelleme Rotası (requiresAuth koymuyoruz!)
+    {
+      path: "/admin/update-password",
+      name: "admin-update-password",
+      component: AdminUpdatePassword,
+    },
     {
       path: "/admin/dashboard",
       name: "admin-dashboard",
@@ -98,11 +107,15 @@ const router = createRouter({
       component: ContentSettings,
       meta: { requiresAuth: true },
     },
+    {
+      path: "/shop/product/:id",
+      name: "product-detail",
+      component: ProductDetail,
+    },
   ],
 });
 
-// Navigation Guard (GÜNCELLENDİ)
-// "async" kelimesi eklendi çünkü Supabase cevabını bekleyeceğiz
+// Navigation Guard
 router.beforeEach(async (to, from, next) => {
   const authStore = useAuthStore();
 

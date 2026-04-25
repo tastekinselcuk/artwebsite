@@ -3,7 +3,9 @@
     "home": "Ana Sayfa",
     "ebruGallery": "Galeri",
     "ebruShop": "Mağaza",
-    "about": "Hakkımda"
+    "photography": "Fotoğrafçılık",
+    "about": "Hakkımda",
+    "cart": "Sepet"
   },
   "home": {
     "hero": {
@@ -82,7 +84,6 @@
     "sort": {
       "title": "Sırala",
       "newest": "En Yeni",
-      "popular": "En Popüler",
       "priceLow": "Fiyat: Düşükten Yükseğe",
       "priceHigh": "Fiyat: Yüksekten Düşüğe",
       "rating": "En Yüksek Puan"
@@ -255,6 +256,28 @@
       "add": "Ekle",
       "update": "Güncelle",
       "deleteConfirm": "Bu fotoğrafı silmek istediğinizden emin misiniz?"
+    },
+    "shop": {
+      "title": "Mağaza Yönetimi",
+      "addNew": "Yeni Ürün Ekle",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "addTitle": "Yeni Ürün Ekle",
+      "editTitle": "Ürünü Düzenle",
+      "titleEn": "Başlık (İngilizce)",
+      "titleTr": "Başlık (Türkçe)",
+      "descriptionEn": "Açıklama (İngilizce)",
+      "descriptionTr": "Açıklama (Türkçe)",
+      "price": "Fiyat (₺)",
+      "stock": "Stok",
+      "category": "Kategori",
+      "rating": "Değerlendirme Puanı",
+      "imageUrl": "Görsel Seç",
+      "cancel": "İptali",
+      "add": "Ekle",
+      "update": "Güncelle",
+      "deleteConfirm": "Bu ürünü silmek istediğinize emin misiniz?",
+      "noProducts": "Henüz hiç ürün eklenmemiş."
     }
   },
   "gallery": {
@@ -279,5 +302,31 @@
     "backHome": "Ana Sayfaya Dön",
     "needHelp": "Yardıma mı ihtiyacınız var?",
     "contactSupport": "Destek ekibi ile iletişime geçin"
+  },
+  "checkout": {
+    "title": "Ödeme",
+    "backToShop": "Mağazaya Dön",
+    "shippingAddress": "Teslimat Adresi",
+    "fullName": "Ad Soyad",
+    "phone": "Telefon",
+    "address": "Adres",
+    "city": "Şehir",
+    "postalCode": "Posta Kodu",
+    "country": "Ülke",
+    "paymentMethod": "Ödeme Yöntemi",
+    "creditCard": "Kredi Kartı",
+    "bankTransfer": "Banka Havalesi",
+    "cardNumber": "Kart Numarası",
+    "expiryDate": "Son Kullanma Tarihi",
+    "cvv": "CVV",
+    "cardHolder": "Kart Sahibi",
+    "placeOrder": "Siparişi Tamamla",
+    "orderSummary": "Sipariş Özeti",
+    "subtotal": "Ara Toplam",
+    "shipping": "Kargo",
+    "tax": "KDV",
+    "total": "Toplam",
+    "freeShipping": "Ücretsiz Kargo",
+    "processing": "İşleniyor..."
   }
 }

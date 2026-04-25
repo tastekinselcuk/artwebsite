@@ -77,7 +77,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { Home, Droplet, Camera, User } from "lucide-vue-next";
+import { Home, Droplet, Camera, User, ShoppingBag } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import CartDropdown from "@/components/CartDropdown.vue";
@@ -95,7 +95,8 @@ const isAdminPage = computed(() => {
 const navItems = [
   { to: "/", icon: Home, label: "nav.home" },
   { to: "/ebru", icon: Droplet, label: "nav.ebruGallery" },
-  { to: "/photography", icon: Camera, label: "nav.ebruShop" },
+  { to: "/shop", icon: ShoppingBag, label: "nav.ebruShop" },
+  { to: "/photography", icon: Camera, label: "nav.photography" },
   { to: "/about", icon: User, label: "nav.about" },
 ];
 

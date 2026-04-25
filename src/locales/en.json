@@ -3,7 +3,9 @@
     "home": "Home",
     "ebruGallery": "Gallery",
     "ebruShop": "Shop",
-    "about": "About"
+    "photography": "Photography",
+    "about": "About",
+    "cart": "Cart"
   },
   "home": {
     "hero": {
@@ -82,7 +84,6 @@
     "sort": {
       "title": "Sort By",
       "newest": "Newest",
-      "popular": "Most Popular",
       "priceLow": "Price: Low to High",
       "priceHigh": "Price: High to Low",
       "rating": "Highest Rated"
@@ -255,6 +256,28 @@
       "add": "Add",
       "update": "Update",
       "deleteConfirm": "Are you sure you want to delete this photo?"
+    },
+    "shop": {
+      "title": "Shop Management",
+      "addNew": "Add New Product",
+      "edit": "Edit",
+      "delete": "Delete",
+      "addTitle": "Add New Product",
+      "editTitle": "Edit Product",
+      "titleEn": "Title (English)",
+      "titleTr": "Title (Turkish)",
+      "descriptionEn": "Description (English)",
+      "descriptionTr": "Description (Turkish)",
+      "price": "Price (TRY)",
+      "stock": "Stock",
+      "category": "Category",
+      "rating": "Rating",
+      "imageUrl": "Select Image",
+      "cancel": "Cancel",
+      "add": "Add",
+      "update": "Update",
+      "deleteConfirm": "Are you sure you want to delete this product?",
+      "noProducts": "No products added yet."
     }
   },
   "gallery": {
@@ -279,5 +302,31 @@
     "backHome": "Back to Home",
     "needHelp": "Need help?",
     "contactSupport": "Contact our support team"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "backToShop": "Back to Shop",
+    "shippingAddress": "Shipping Address",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "paymentMethod": "Payment Method",
+    "creditCard": "Credit Card",
+    "bankTransfer": "Bank Transfer",
+    "cardNumber": "Card Number",
+    "expiryDate": "Expiry Date",
+    "cvv": "CVV",
+    "cardHolder": "Card Holder",
+    "placeOrder": "Place Order",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "total": "Total",
+    "freeShipping": "Free Shipping",
+    "processing": "Processing..."
   }
 }

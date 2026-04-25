@@ -130,10 +130,10 @@
             </p>
 
             <router-link
-              to="/photography"
+              to="/shop"
               class="mt-8 px-8 py-3 rounded-full bg-white text-teal-900 font-bold opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out delay-100 shadow-xl"
             >
-              İncele
+              {{ t("home.shop.viewAll") }}
             </router-link>
           </div>
         </div>
@@ -178,12 +178,13 @@
               <div
                 class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
               >
-                <button
+                <router-link
+                  to="/shop"
                   class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white flex items-center gap-2 shadow-xl"
                 >
                   <ShoppingBag class="w-4 h-4" />
                   {{ t("home.shop.viewProduct") }}
-                </button>
+                </router-link>
               </div>
             </div>
 
@@ -204,12 +205,13 @@
         </div>
 
         <div class="mt-16 text-center">
-          <button
+          <router-link
+            to="/shop"
             class="inline-flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors border-b border-foreground/20 hover:border-primary pb-1 text-sm"
           >
             {{ t("home.shop.viewAll") }}
             <ArrowRight class="w-4 h-4" />
-          </button>
+          </router-link>
         </div>
       </div>
     </section>

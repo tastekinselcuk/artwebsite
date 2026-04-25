@@ -1,3 +1,4 @@
+// src/stores/auth.js
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { supabase } from '@/supabaseClient'
@@ -10,19 +11,13 @@ export const useAuthStore = defineStore('auth', () => {
   const error = ref(null)
   const router = useRouter()
 
-  // 1. Giriş Yap (Login)
+  // 1. Giriş Yap
   const login = async (email, password) => {
     loading.value = true
     error.value = null
-
     try {
-      const { data, error: err } = await supabase.auth.signInWithPassword({
-        email,
-        password
-      })
-
+      const { data, error: err } = await supabase.auth.signInWithPassword({ email, password })
       if (err) throw err
-
       user.value = data.user
       session.value = data.session
       return true
@@ -35,19 +30,19 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // 2. Çıkış Yap (Logout)
+  // 2. Çıkış Yap
   const logout = async () => {
     try {
       await supabase.auth.signOut()
       user.value = null
       session.value = null
-      router.push('/admin/login') // Çıkış yapınca login'e at
+      router.push('/admin/login')
     } catch (e) {
       console.error('Logout Error:', e)
     }
   }
 
-  // 3. Oturum Kontrolü (İSMİ DÜZELTİLDİ: checkAuth)
+  // 3. Oturum Kontrolü
   const checkAuth = async () => {
     const { data } = await supabase.auth.getSession()
     if (data.session) {
@@ -58,6 +53,46 @@ export const useAuthStore = defineStore('auth', () => {
     return false
   }
 
+  // YENİ: 4. Şifre Sıfırlama E-postası Gönder
+  const sendPasswordResetEmail = async (email) => {
+    loading.value = true
+    error.value = null
+    try {
+      const { error: err } = await supabase.auth.resetPasswordForEmail(email, {
+        // Kullanıcı linke tıklayınca bu sayfaya dönecek
+        // window.location.origin dinamik olarak 'http://localhost:3000' veya canlı site URL'ni alır
+        redirectTo: `${window.location.origin}/admin/update-password`,
+      })
+      if (err) throw err
+      return true
+    } catch (e) {
+      console.error('Reset Password Error:', e.message)
+      error.value = 'Şifre sıfırlama linki gönderilemedi. Lütfen adresi kontrol edin.'
+      return false
+    } finally {
+      loading.value = false
+    }
+  }
+
+  // YENİ: 5. Yeni Şifreyi Belirle (Kullanıcı linke tıklayıp geldikten sonra çalışır)
+  const updatePassword = async (newPassword) => {
+    loading.value = true
+    error.value = null
+    try {
+      const { error: err } = await supabase.auth.updateUser({
+        password: newPassword
+      })
+      if (err) throw err
+      return true
+    } catch (e) {
+      console.error('Update Password Error:', e.message)
+      error.value = 'Şifre güncellenemedi. Lütfen daha sonra tekrar deneyin.'
+      return false
+    } finally {
+      loading.value = false
+    }
+  }
+
   return {
     user,
     session,
@@ -65,6 +100,8 @@ export const useAuthStore = defineStore('auth', () => {
     error,
     login,
     logout,
-    checkAuth
+    checkAuth,
+    sendPasswordResetEmail,
+    updatePassword
   }
 })

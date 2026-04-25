@@ -3,7 +3,6 @@ import { ref, computed } from "vue";
 import { supabase } from "@/supabaseClient";
 
 export const useProductStore = defineStore("products", () => {
-  // State
   const products = ref([]);
   const loading = ref(false);
   const error = ref(null);
@@ -18,9 +17,8 @@ export const useProductStore = defineStore("products", () => {
 
   const sortOptions = ref([
     { id: "newest", labelKey: "shop.sort.newest" },
-    { id: "popular", labelKey: "shop.sort.popular" },
-    { id: "price-low", labelKey: "shop.sort.priceLow" },
-    { id: "price-high", labelKey: "shop.sort.priceHigh" },
+    { id: "priceLow", labelKey: "shop.sort.priceLow" },
+    { id: "priceHigh", labelKey: "shop.sort.priceHigh" },
     { id: "rating", labelKey: "shop.sort.rating" },
   ]);
 
@@ -29,23 +27,21 @@ export const useProductStore = defineStore("products", () => {
   const searchQuery = ref("");
   const priceRange = ref([0, 10000]);
 
-  // Veritabanı satırını Frontend formatına çevirir
+  // JSONB dil formatına uygun eşleme
   const mapRowToProduct = (row) => ({
     id: row.id,
-    titleKey: row.title_key ?? "",
-    categoryKey: row.category_key ?? "",
-    descriptionKey: row.description_key ?? "",
+    title: { en: row.title?.en ?? "", tr: row.title?.tr ?? "" },
+    description: { en: row.description?.en ?? "", tr: row.description?.tr ?? "" },
     price: row.price ?? 0,
     image: row.image ?? "",
-    tagKey: row.tag_key ?? "",
     category: row.category ?? "accessories",
-    featured: row.featured ?? false,
     stock: row.stock ?? 0,
-    rating: row.rating ?? 0,
+    rating: row.rating ?? 5.0,
     reviews: row.reviews ?? 0,
+    isActive: row.is_active ?? true
   });
 
-  // Supabase'den ürünleri çek
+  // 1. Ürünleri Çek
   const fetchProductsFromSupabase = async () => {
     loading.value = true;
     error.value = null;
@@ -53,46 +49,168 @@ export const useProductStore = defineStore("products", () => {
       const { data, error: err } = await supabase
         .from("products")
         .select("*")
-        .eq("is_active", true)
         .order("created_at", { ascending: false });
 
       if (err) throw err;
       products.value = (data ?? []).map(mapRowToProduct);
     } catch (e) {
       console.error("Fetch Products Error:", e);
-      error.value = "Ürünler yüklenirken hata oluştu";
+      error.value = "Ürünler yüklenirken hata oluştu.";
     } finally {
       loading.value = false;
     }
   };
 
-  const filteredProducts = computed(() => {
-    let filtered = products.value;
+  // 2. Resim Yükleme
+  const uploadImage = async (file) => {
+    loading.value = true;
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
 
-    // Category filter
+      const { error: uploadError } = await supabase.storage
+        .from('product-images')
+        .upload(fileName, file);
+
+      if (uploadError) throw uploadError;
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('product-images')
+        .getPublicUrl(fileName);
+
+      return publicUrl;
+    } catch (e) {
+      console.error('Upload Error:', e);
+      throw e;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // 3. Yeni Ürün Ekle (Create)
+  const createProduct = async (productData) => {
+    loading.value = true;
+    try {
+      const dbPayload = {
+        title: { en: productData.titleEn, tr: productData.titleTr },
+        description: { en: productData.descEn, tr: productData.descTr },
+        price: productData.price,
+        stock: productData.stock,
+        category: productData.category,
+        rating: productData.rating,
+        image: productData.image,
+        is_active: true
+      };
+
+      const { data, error: dbError } = await supabase
+        .from('products')
+        .insert([dbPayload])
+        .select();
+
+      if (dbError) throw dbError;
+
+      products.value.unshift(mapRowToProduct(data[0]));
+      return true;
+    } catch (e) {
+      console.error('Create Error:', e);
+      error.value = 'Ürün ekleme başarısız.';
+      return false;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // 4. Ürün Güncelle (Update)
+  const updateProduct = async (id, updatedFields) => {
+    loading.value = true;
+    try {
+      const { data, error: dbError } = await supabase
+        .from('products')
+        .update(updatedFields)
+        .eq('id', id)
+        .select();
+
+      if (dbError) throw dbError;
+
+      const updatedItem = mapRowToProduct(data[0]);
+      const index = products.value.findIndex(p => p.id === id);
+      if (index !== -1) products.value[index] = updatedItem;
+
+      return true;
+    } catch (e) {
+      console.error('Update Error:', e);
+      error.value = 'Ürün güncelleme başarısız.';
+      return false;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // 5. Ürün Sil (Delete)
+  const deleteProduct = async (id, imageUrl) => {
+    if (!confirm('Bu ürünü silmek istediğinize emin misiniz?')) return false;
+
+    loading.value = true;
+    try {
+      const { error: dbError } = await supabase
+        .from('products')
+        .delete()
+        .eq('id', id);
+
+      if (dbError) throw dbError;
+
+      products.value = products.value.filter(item => item.id !== id);
+
+      if (imageUrl && imageUrl.includes('product-images')) {
+        const fileName = imageUrl.split('product-images/').pop();
+        if (fileName) {
+          await supabase.storage.from('product-images').remove([fileName]);
+        }
+      }
+      return true;
+    } catch (e) {
+      console.error('Delete Error:', e);
+      error.value = 'Silme işlemi başarısız.';
+      return false;
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  // --- FİLTRELEME, ARAMA VE SIRALAMA MANTIĞI ---
+  const filteredProducts = computed(() => {
+    // 1. Sadece aktif olanları al
+    let filtered = products.value.filter(p => p.isActive);
+
+    // 2. Kategori Filtresi
     if (selectedCategory.value !== "all") {
       filtered = filtered.filter((p) => p.category === selectedCategory.value);
     }
 
-    // Price filter
-    filtered = filtered.filter(
-      (p) => p.price >= priceRange.value[0] && p.price <= priceRange.value[1],
-    );
+    // 3. Fiyat Filtresi
+    filtered = filtered.filter((p) => p.price >= priceRange.value[0] && p.price <= priceRange.value[1]);
 
-    // Search filter
+    // 4. Arama Filtresi (Kullanıcı arama yaparsa TR veya EN başlıkta arar)
     if (searchQuery.value) {
-      filtered = filtered.filter((p) => p.id.toString().includes(searchQuery.value.toLowerCase()));
+      const query = searchQuery.value.toLowerCase();
+      filtered = filtered.filter((p) => 
+        (p.title?.tr?.toLowerCase().includes(query)) ||
+        (p.title?.en?.toLowerCase().includes(query))
+      );
     }
 
-    // Sorting
-    if (selectedSort.value === "price-low") {
+    // 5. Sıralama İşlemleri
+    if (selectedSort.value === "priceLow") {
       filtered.sort((a, b) => a.price - b.price);
-    } else if (selectedSort.value === "price-high") {
+    } else if (selectedSort.value === "priceHigh") {
       filtered.sort((a, b) => b.price - a.price);
     } else if (selectedSort.value === "rating") {
       filtered.sort((a, b) => b.rating - a.rating);
     } else if (selectedSort.value === "popular") {
       filtered.sort((a, b) => b.reviews - a.reviews);
+    } else if (selectedSort.value === "newest") {
+      // ID'si büyük olan son eklenmiştir mantığıyla çalışır
+      filtered.sort((a, b) => b.id - a.id); 
     }
 
     return filtered;
@@ -102,38 +220,15 @@ export const useProductStore = defineStore("products", () => {
     return products.value.find((p) => p.id === id);
   };
 
-  const setCategory = (categoryId) => {
-    selectedCategory.value = categoryId;
-  };
-
-  const setSort = (sortId) => {
-    selectedSort.value = sortId;
-  };
-
-  const setSearchQuery = (query) => {
-    searchQuery.value = query;
-  };
-
-  const setPriceRange = (range) => {
-    priceRange.value = range;
-  };
+  const setCategory = (c) => selectedCategory.value = c;
+  const setSort = (s) => selectedSort.value = s;
+  const setSearchQuery = (q) => searchQuery.value = q;
+  const setPriceRange = (r) => priceRange.value = r;
 
   return {
-    products,
-    loading,
-    error,
-    categories,
-    sortOptions,
-    selectedCategory,
-    selectedSort,
-    searchQuery,
-    priceRange,
-    filteredProducts,
-    getProductById,
-    setCategory,
-    setSort,
-    setSearchQuery,
-    setPriceRange,
-    fetchProductsFromSupabase,
+    products, loading, error, categories, sortOptions,
+    selectedCategory, selectedSort, searchQuery, priceRange, filteredProducts,
+    getProductById, setCategory, setSort, setSearchQuery, setPriceRange,
+    fetchProductsFromSupabase, uploadImage, createProduct, updateProduct, deleteProduct
   };
 });
