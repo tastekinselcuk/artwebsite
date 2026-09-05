@@ -1,24 +1,15 @@
 <template>
-  <div class="min-h-screen bg-background pt-12 pb-20">
-    <div class="max-w-[1400px] mx-auto px-6">
+  <!-- 1. Sayfa Yüksekliğini Kilitliyoruz (Masaüstü için h-screen) -->
+  <div class="min-h-screen lg:h-screen bg-background pt-28 lg:pt-36 flex flex-col lg:overflow-hidden">
+    
+    <!-- 2. Esnek Taşıyıcı -->
+    <div class="max-w-[1400px] w-full mx-auto px-6 flex-1 lg:min-h-0 flex flex-col pb-6">
       
-      <div class="flex items-end justify-between mb-8 border-b border-border pb-4">
-        <div>
-          <p class="text-sm text-muted-foreground mt-2">
-            {{ productStore.filteredProducts.length }}
-            {{
-              productStore.filteredProducts.length === 1
-                ? t("shop.resultSingular")
-                : t("shop.resultPlural")
-            }}
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 gap-8 flex-1 lg:min-h-0">
         
-        <aside class="lg:col-span-1">
-          <div class="sticky top-28 space-y-6 filter-sidebar pr-2 pb-6">
+        <!-- Sol Menü: Masaüstünde kendi içinde scroll olur, üst sınıra çarpar -->
+        <aside class="lg:col-span-1 lg:h-full lg:overflow-y-auto custom-scrollbar lg:pr-4">
+          <div class="space-y-6 pb-6">
             
             <div class="relative">
               <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -113,8 +104,9 @@
           </div>
         </aside>
 
-        <main class="lg:col-span-3 xl:col-span-4">
-          <div v-if="productStore.filteredProducts.length > 0" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Sağ Alan (Ürünler): Masaüstünde kendi içinde scroll olur, üst sınıra çarpar -->
+        <main class="lg:col-span-3 xl:col-span-4 lg:h-full lg:overflow-y-auto custom-scrollbar lg:pr-4">
+          <div v-if="productStore.filteredProducts.length > 0" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 pb-20">
             <div
               v-for="product in productStore.filteredProducts"
               :key="product.id"
@@ -184,7 +176,7 @@
             </div>
           </div>
 
-          <div v-else class="text-center py-20 bg-card rounded-2xl border border-border">
+          <div v-else class="text-center py-20 bg-card rounded-2xl border border-border mt-4">
             <div class="w-20 h-20 bg-muted/50 rounded-full flex items-center justify-center mx-auto mb-4">
               <ShoppingBag class="w-8 h-8 text-muted-foreground opacity-50" />
             </div>
@@ -279,21 +271,18 @@ cartStore.loadCart();
 </script>
 
 <style scoped>
-.filter-sidebar {
-  max-height: calc(100vh - 7rem);
-  overflow-y: auto;
+/* Kaydırma Çubuğu Stilleri - Hem filtre hem ürün listesi için bağımsız hale getirildi */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
 }
-.filter-sidebar::-webkit-scrollbar {
-  width: 4px;
-}
-.filter-sidebar::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
-.filter-sidebar::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: hsl(var(--muted-foreground) / 0.2);
   border-radius: 10px;
 }
-.filter-sidebar:hover::-webkit-scrollbar-thumb {
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: hsl(var(--muted-foreground) / 0.4);
 }
 

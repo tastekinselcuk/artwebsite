@@ -16,57 +16,61 @@
       "viewPhoto": "Fotoğrafları İncele"
     },
     "philosophy": {
+      "eyebrow": "Gelenek",
       "title": "Ebru Sanatı",
-      "description": "Ebru, suyun üzerinde doğan ve bir daha asla tekrarlanmayan bir mucizedir. Her eser tek ve eşsizdir; tıpkı onu seçen kişi gibi. Ebru, kontrol ile teslimiyet arasındaki ince dengedir. Sanatçı yön verir, fakat son sözü her zaman su söyler. Bu yüzden her ebru çalışması, anın ruhunu taşıyan tek ve tekrar edilemez bir izdir. Yüzyıllardır sabır, zarafet ve ustalıkla yaşatılan ebru sanatı; mekânlara yalnızca estetik değil, ruh katar. Her çalışma el yapımıdır, her fırça izi bir anın izini taşır. Yaşam alanlarınıza sessiz bir ihtişam ve derinlik katan zamansız bir dokunuş…",
-      "galleryTitle": "Ebru Galerisi",
-      "galleryDesc": "Su üzerinde pigmentlerin yüzdüğü, büyüleyici organik desenler yaratan antik Türk su süsleme sanatı. Her eser benzersiz, tekrarlanamaz, canlı.",
-      "shopTitle": "Eser Mağazası",
-      "shopDesc": "Ebru sanatının büyüleyici atmosferini evinize veya ofisinize taşıyın. Orijinal eserlerden oluşan koleksiyonumuzdan dilediğinizi satın alın ve sanata sahip olun."
-    },
-    "shop": {
-      "tag": "Online Mağaza",
-      "title": "Sanatın Evinize Dokunuşu",
-      "description": "Orijinal ebru çalışmaları ve kişiye özel tasarım ürünler.",
-      "viewProduct": "Ürünü İncele",
-      "viewAll": "Tüm Koleksiyonu Görüntüle",
-      "products": {
-        "silkScarf": {
-          "title": "Turkuaz Rüya - İpek Şal",
-          "category": "Giyim & Aksesuar",
-          "description": "Orijinal ebru sanatından uyarlanan ipek şal. Herhangi bir kıyafete zarafet katmak için mükemmel.",
-          "tag": "Yeni Sezon"
+      "description": "Su, pigment ve anın buluşması. Kontrol ile teslimiyet arasındaki dengede doğan, bir daha tekrarlanmayan izler.",
+      "topicsTitle": "Bilinmesi gerekenler",
+      "varietiesTitle": "Ebru çeşitleri",
+      "varietiesHint": "Bir çeşidi açarak kısa açıklamasını ve örnek bir çalışmayı inceleyin.",
+      "exploreGallery": "Galeriyi Keşfet",
+      "topics": {
+        "what": {
+          "title": "Ebru nedir?",
+          "body": "Ebru, kıvamlı suyun yüzeyinde dağıtılan doğal boyalarla desen oluşturulup kâğıda alınan geleneksel bir Türk sanatıdır. Her çalışma benzersizdir; aynı kompozisyon bir daha kurulamaz."
         },
-        "ebruPainting": {
-          "title": "Battal Ebru Tablo (Orijinal)",
-          "category": "Duvar Sanatı",
-          "description": "Kâğıda el ile yapılmış orijinal eser. Her parça tamamen benzersiz ve tekrar edilemez.",
-          "tag": "Tek Eser"
+        "how": {
+          "title": "Nasıl oluşur?",
+          "body": "Teknede hazırlanan suyun üzerine fırça veya biz ile boya damlatılır. Desen tarak, biz veya nefesle yönlendirilir; ardından kâğıt yüzeye serilerek iz alınır. Sanatçı yön verir, son sözü su söyler."
         },
-        "printSet": {
-          "title": "İstanbul Serisi - 3'lü Set",
-          "category": "Fine Art Baskı",
-          "description": "İstanbul mimarisi serimizden sınırlı baskı seti.",
-          "tag": ""
+        "unique": {
+          "title": "Neden tektir?",
+          "body": "Akış, pigment ve zamanın kesişimi her seferinde farklıdır. Bu yüzden her ebru, anın ruhunu taşıyan tek ve tekrar edilemez bir dokunuştur."
+        }
+      },
+      "varieties": {
+        "battal": {
+          "title": "Battal Ebru",
+          "body": "En temel form. Boyalar serbest bırakılır; doğal yayılma ve organik halkalar ön plandadır."
         },
-        "ebruNotebook": {
-          "title": "Ebru Desenlı Defter",
-          "category": "Kırtasiye & Aksesuar",
-          "description": "Orijinal ebru kapağı olan premium defter. Günlük yazı veya çizim için mükemmel.",
-          "tag": "Mükemmel Hediye"
+        "gelgit": {
+          "title": "Gelgit Ebru",
+          "body": "Biz veya fırça ile ileri-geri hareketlerle oluşturulur. Dalgalı, ritmik çizgiler karakteristiğidir."
         },
-        "ebruCanvas": {
-          "title": "Tuval Baskı - Büyük Boy",
-          "category": "Duvar Sanatı",
-          "description": "İmza ebrusu kompozisyonlarımızın yüksek kaliteli tuval baskısı. Müze kalitesi malzeme.",
-          "tag": "Müze Kalitesi"
+        "tarakli": {
+          "title": "Taraklı Ebru",
+          "body": "Özel taraklarla çekilerek düzenli, taranmış dokular elde edilir. Geometrik ritim ve akış bir aradadır."
         },
-        "photographyBook": {
-          "title": "Salon Masası Fotoğraf Kitabı",
-          "category": "Kitaplar & Yayınlar",
-          "description": "Mimari fotoğraf çalışmalarımızın güzel basılı koleksiyonu.",
-          "tag": ""
+        "cicekli": {
+          "title": "Çiçekli Ebru",
+          "body": "Gelgit veya battal zemin üzerine stilize çiçek motifleri işlenir. İnce biz ustalığı ister."
+        },
+        "hatip": {
+          "title": "Hatip Ebru",
+          "body": "Merkezden açılan simetrik, madalyon benzeri formlar. Yoğun renk halkaları ve dengeli kompozisyon tipiktir."
+        },
+        "kumlu": {
+          "title": "Kumlu Ebru",
+          "body": "Boyanın kıvamı ve tekne koşullarıyla oluşan grenli, kumsu doku. Yüzeyde ince tanecikli bir etki yaratır."
         }
       }
+    },
+    "shop": {
+      "tag": "Eser Mağazası",
+      "title": "Seçili Parçalar",
+      "description": "Atölyeden çıkan orijinal eserler ve ebru’dan doğan tasarımlar. Koleksiyondan bir kesit.",
+      "viewProduct": "İncele",
+      "viewAll": "Tüm Koleksiyonu Görüntüle",
+      "empty": "Ürünler yakında burada yer alacak."
     }
   },
   "shop": {

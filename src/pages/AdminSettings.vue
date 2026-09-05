@@ -22,7 +22,7 @@
 
         <div class="flex gap-2 overflow-x-auto pb-2 border-b border-border">
           <button
-            v-for="(items, groupName) in settingsStore.groupedSettings"
+            v-for="groupName in visibleSettingGroups"
             :key="groupName"
             @click="activeTab = groupName"
             class="px-4 py-2 rounded-lg font-medium capitalize transition-all whitespace-nowrap"
@@ -147,7 +147,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { useSettingsStore } from '@/stores/settings'
 import { Settings, ArrowLeft, Upload, CheckCircle2 } from 'lucide-vue-next'
 
@@ -157,9 +157,18 @@ const activeTab = ref('home')
 const groupLabels = {
   home: 'Anasayfa',
   ebru: 'Ebru Sanatı',
-  photography: 'Fotoğrafçılık',
   general: 'Genel Ayarlar'
 }
+
+const visibleSettingGroups = computed(() =>
+  Object.keys(settingsStore.groupedSettings).filter((name) => name !== 'photography'),
+)
+
+watch(visibleSettingGroups, (groups) => {
+  if (groups.length && !groups.includes(activeTab.value)) {
+    activeTab.value = groups[0]
+  }
+})
 
 onMounted(() => {
   settingsStore.fetchSettings()

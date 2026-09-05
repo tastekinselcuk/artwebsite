@@ -15,13 +15,6 @@
         >
           Ebru Sayfası
         </button>
-        <button
-          @click="activeTab = 'photography_page'"
-          class="pb-2 px-4 font-medium transition-colors border-b-2"
-          :class="activeTab === 'photography_page' ? 'border-teal-600 text-teal-600' : 'border-transparent text-muted-foreground hover:text-foreground'"
-        >
-          Fotoğraf Sayfası
-        </button>
       </div>
 
       <div v-if="contentStore.loading && !currentData" class="text-center py-12">

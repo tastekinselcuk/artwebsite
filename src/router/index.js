@@ -5,14 +5,12 @@ import { useAuthStore } from "@/stores/auth";
 import Home from "../pages/Home.vue";
 import About from "../pages/About.vue";
 import Ebru from "../pages/Ebru.vue";
-import Photography from "../pages/Photography.vue";
 import Shop from "../pages/Shop.vue";
 import AdminLogin from "../pages/AdminLogin.vue";
-// YENİ: Şifre güncelleme sayfasını import ediyoruz
 import AdminUpdatePassword from "../pages/AdminUpdatePassword.vue";
 import AdminDashboard from "../pages/AdminDashboard.vue";
 import AdminEbru from "../pages/AdminEbru.vue";
-import AdminPhotography from "../pages/AdminPhotography.vue";
+import AdminEbruVarieties from "../pages/AdminEbruVarieties.vue";
 import AdminSettings from "../pages/AdminSettings.vue";
 import AdminShop from "../pages/AdminShop.vue";
 import ContentSettings from "../pages/ContentSettings.vue";
@@ -37,11 +35,6 @@ const router = createRouter({
       path: "/ebru",
       name: "ebru",
       component: Ebru,
-    },
-    {
-      path: "/photography",
-      name: "photography",
-      component: Photography,
     },
     {
       path: "/shop",
@@ -84,9 +77,9 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
-      path: "/admin/photography",
-      name: "admin-photography",
-      component: AdminPhotography,
+      path: "/admin/ebru-varieties",
+      name: "admin-ebru-varieties",
+      component: AdminEbruVarieties,
       meta: { requiresAuth: true },
     },
     {

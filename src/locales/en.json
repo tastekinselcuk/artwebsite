@@ -9,64 +9,68 @@
   },
   "home": {
     "hero": {
-      "title": "Where Art",
-      "titleHighlight": "Meets Vision",
-      "subtitle": "Exploring the fluid beauty of Turkish Ebru marbling and the geometric precision of modern photography",
+      "title": "Sarpé",
+      "titleHighlight": "Atelier",
+      "subtitle": "Exploring the fluid beauty of Turkish Ebru marbling",
       "exploreEbru": "Explore Ebru Art",
       "viewPhoto": "View Photography"
     },
     "philosophy": {
-      "title": "View & Collect",
-      "description": "Ebru art is not just a visual feast to be observed, but a touch that adds soul to living spaces. Explore the works formed by the fluidity of water on one side, and make these unique pieces a part of your life on the other.",
-      "galleryTitle": "Ebru Gallery",
-      "galleryDesc": "Wander through our digital exhibition of colors dancing on water. Explore modern compositions blended with traditional techniques, where each piece is unique and unrepeatable.",
-      "shopTitle": "Art Shop",
-      "shopDesc": "Bring the mesmerizing atmosphere of Ebru art into your home or office. Browse our collection of original artworks and own a unique piece of living art."
-    },
-    "shop": {
-      "tag": "Online Shop",
-      "title": "Art for Your Home",
-      "description": "Original Ebru artworks, limited edition prints, and exclusive design products.",
-      "viewProduct": "View Product",
-      "viewAll": "View Full Collection",
-      "products": {
-        "silkScarf": {
-          "title": "Turquoise Dream - Silk Scarf",
-          "category": "Apparel & Accessories",
-          "description": "Handcrafted silk scarf featuring authentic Ebru marbling. Perfect for adding elegance to any outfit.",
-          "tag": "New Season"
+      "eyebrow": "Tradition",
+      "title": "Ebru Art",
+      "description": "Where water, pigment and the moment meet. Marks born in the balance between control and surrender — never to be repeated.",
+      "topicsTitle": "Essentials",
+      "varietiesTitle": "Types of Ebru",
+      "varietiesHint": "Open a type to read a short note and see an example work.",
+      "exploreGallery": "Explore Gallery",
+      "topics": {
+        "what": {
+          "title": "What is Ebru?",
+          "body": "Ebru is the traditional Turkish art of floating natural pigments on thickened water and transferring the pattern onto paper. Every piece is unique; the same composition cannot be remade."
         },
-        "ebruPainting": {
-          "title": "Battal Ebru Painting (Original)",
-          "category": "Wall Art",
-          "description": "Original hand-marbled artwork on paper. Each piece is absolutely unique and unrepeatable.",
-          "tag": "Unique Piece"
+        "how": {
+          "title": "How is it made?",
+          "body": "Pigments are dropped onto the prepared water with a brush or stylus. The design is guided with a comb, stylus or breath, then lifted onto paper. The artist guides — water has the final word."
         },
-        "printSet": {
-          "title": "Istanbul Series - Set of 3",
-          "category": "Fine Art Prints",
-          "description": "Limited edition fine art prints from our Istanbul architectural series.",
-          "tag": ""
+        "unique": {
+          "title": "Why is each piece unique?",
+          "body": "Flow, pigment and timing intersect differently every time. Each Ebru carries the spirit of that moment as a singular, unrepeatable touch."
+        }
+      },
+      "varieties": {
+        "battal": {
+          "title": "Battal Ebru",
+          "body": "The foundational form. Pigments are left to spread freely, creating organic rings and natural blooms."
         },
-        "ebruNotebook": {
-          "title": "Ebru-Decorated Notebook",
-          "category": "Stationery & Accessories",
-          "description": "Premium notebook with authentic Ebru marbled cover. Perfect for journaling or sketching.",
-          "tag": "Perfect Gift"
+        "gelgit": {
+          "title": "Gelgit Ebru",
+          "body": "Formed with back-and-forth strokes of a stylus or brush. Wavy, rhythmic lines define its character."
         },
-        "ebruCanvas": {
-          "title": "Canvas Print - Large Format",
-          "category": "Wall Art",
-          "description": "High-quality canvas reproduction of our signature Ebru compositions. Museum-grade materials.",
-          "tag": "Museum Quality"
+        "tarakli": {
+          "title": "Taraklı Ebru",
+          "body": "Drawn with special combs to create ordered, combed textures — geometry meeting fluid motion."
         },
-        "photographyBook": {
-          "title": "Coffee Table Photography Book",
-          "category": "Books & Publications",
-          "description": "Beautifully printed collection of our architectural photography works.",
-          "tag": ""
+        "cicekli": {
+          "title": "Çiçekli Ebru",
+          "body": "Stylized floral motifs worked over a gelgit or battal ground. Requires refined stylus control."
+        },
+        "hatip": {
+          "title": "Hatip Ebru",
+          "body": "Symmetrical, medallion-like forms opening from the center. Dense color rings and balanced composition are typical."
+        },
+        "kumlu": {
+          "title": "Kumlu Ebru",
+          "body": "A grainy, sand-like texture created through pigment consistency and tray conditions — a fine particulate surface effect."
         }
       }
+    },
+    "shop": {
+      "tag": "Art Shop",
+      "title": "Selected Pieces",
+      "description": "Original works from the atelier and designs born from Ebru — a glimpse of the collection.",
+      "viewProduct": "View",
+      "viewAll": "View Full Collection",
+      "empty": "Pieces will appear here soon."
     }
   },
   "shop": {

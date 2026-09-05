@@ -2,13 +2,13 @@
   <div class="relative">
     <button
       @click="cartStore.toggleCart()"
-      class="relative p-2 text-foreground hover:text-primary transition-colors"
+      class="relative w-12 h-12 rounded-full bg-card/90 border border-border/60 text-foreground shadow-md hover:shadow-lg hover:text-primary transition-all duration-300 flex items-center justify-center backdrop-blur-md"
       :aria-label="t('shop.cart.title') || 'Shopping Cart'"
     >
-      <ShoppingCart class="w-6 h-6" />
+      <ShoppingCart class="w-5 h-5" stroke-width="1.75" />
       <span
         v-if="cartStore.totalItems > 0"
-        class="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm"
+        class="absolute -top-0.5 -right-0.5 min-w-[1.15rem] h-[1.15rem] px-1 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-[10px] font-semibold leading-none shadow-sm"
       >
         {{ cartStore.totalItems }}
       </span>
@@ -24,7 +24,7 @@
     >
       <div
         v-if="cartStore.isOpen"
-        class="absolute right-0 top-12 w-96 bg-card border border-border rounded-2xl shadow-2xl z-50 overflow-hidden"
+        class="absolute right-0 top-14 w-[22rem] max-w-[calc(100vw-2rem)] bg-card border border-border rounded-2xl shadow-2xl z-50 overflow-hidden"
       >
         <div class="bg-primary/5 border-b border-border px-6 py-4 flex items-center justify-between">
           <h3 class="font-display font-bold text-lg text-foreground flex items-center gap-2">

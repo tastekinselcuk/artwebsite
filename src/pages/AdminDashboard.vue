@@ -51,16 +51,14 @@
             <div>
               <p class="text-sm font-medium text-muted-foreground">Portfolyo Eserleri</p>
               <h3 class="text-3xl font-bold text-foreground mt-2">
-                {{ galleryStore.totalEbruCount + galleryStore.totalPhotoCount }}
+                {{ galleryStore.totalEbruCount }}
               </h3>
             </div>
             <div class="p-2 bg-primary/10 rounded-lg">
               <Image class="w-5 h-5 text-primary" />
             </div>
           </div>
-          <div class="mt-4 text-xs text-muted-foreground">
-            {{ galleryStore.totalEbruCount }} Ebru, {{ galleryStore.totalPhotoCount }} Fotoğraf
-          </div>
+          <div class="mt-4 text-xs text-muted-foreground">Ebru galerisi</div>
         </div>
 
         <div class="bg-card rounded-xl p-6 shadow-sm border border-border">
@@ -87,10 +85,10 @@
               <Plus class="w-3 h-3 mr-1" /> Ebru
             </router-link>
             <router-link
-              to="/admin/photography"
-              class="flex-1 flex items-center justify-center py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition text-xs font-medium"
+              to="/admin/ebru-varieties"
+              class="flex-1 flex items-center justify-center py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition text-xs font-medium"
             >
-              <Plus class="w-3 h-3 mr-1" /> Foto
+              <Plus class="w-3 h-3 mr-1" /> Çeşitler
             </router-link>
             <router-link
               to="/admin/shop"
@@ -126,8 +124,7 @@
               <div class="flex justify-between text-sm">
                 <div class="flex items-center gap-2">
                   <span
-                    class="w-2 h-2 rounded-full"
-                    :class="item.type === 'ebru' ? 'bg-teal-500' : 'bg-indigo-500'"
+                    class="w-2 h-2 rounded-full bg-teal-500"
                   ></span>
                   <span class="font-medium text-foreground truncate max-w-[200px]">{{
                     item.title.tr
@@ -137,8 +134,7 @@
               </div>
               <div class="h-2 w-full bg-muted rounded-full overflow-hidden">
                 <div
-                  class="h-full rounded-full transition-all duration-1000 ease-out"
-                  :class="item.type === 'ebru' ? 'bg-teal-500' : 'bg-indigo-500'"
+                  class="h-full rounded-full transition-all duration-1000 ease-out bg-teal-500"
                   :style="{ width: calculatePercentage(item.views) + '%' }"
                 ></div>
               </div>
@@ -158,25 +154,23 @@
             <div
               class="absolute inset-0 rounded-full border-8 border-primary border-t-transparent rotate-45"
             ></div>
-            <span class="text-2xl font-bold">{{
-              galleryStore.totalEbruCount + galleryStore.totalPhotoCount
-            }}</span>
+            <span class="text-2xl font-bold">{{ galleryStore.totalEbruCount }}</span>
           </div>
 
-          <h3 class="font-bold text-foreground">Portfolyo Dağılımı</h3>
+          <h3 class="font-bold text-foreground">Ebru Portfolyosu</h3>
 
           <div class="mt-6 w-full space-y-2">
             <div class="flex justify-between items-center p-2 rounded bg-muted/50">
               <span class="text-sm font-medium">Ebru Sanatı</span>
               <span class="text-sm font-bold text-primary">{{ galleryStore.totalEbruCount }}</span>
             </div>
-
-            <div class="flex justify-between items-center p-2 rounded bg-muted/50">
-              <span class="text-sm font-medium">Fotoğrafçılık</span>
-              <span class="text-sm font-bold text-indigo-500">{{
-                galleryStore.totalPhotoCount
-              }}</span>
-            </div>
+            <router-link
+              to="/admin/ebru-varieties"
+              class="flex justify-between items-center p-2 rounded bg-muted/50 hover:bg-muted transition-colors"
+            >
+              <span class="text-sm font-medium">Ebru Çeşitleri</span>
+              <span class="text-xs text-primary font-medium">Yönet →</span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -210,9 +204,8 @@
                 v-model="filterType"
                 class="pl-9 pr-8 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 appearance-none cursor-pointer"
               >
-                <option value="all">Tüm Kategoriler</option>
-                <option value="ebru">Sadece Ebru</option>
-                <option value="photo">Sadece Fotoğraf</option>
+                <option value="all">Tüm Eserler</option>
+                <option value="ebru">Ebru</option>
               </select>
             </div>
           </div>
@@ -254,14 +247,9 @@
 
                 <td class="px-6 py-4">
                   <span
-                    class="px-2 py-1 rounded-full text-xs font-medium border"
-                    :class="
-                      item.type === 'ebru'
-                        ? 'bg-teal-50 text-teal-700 border-teal-100'
-                        : 'bg-indigo-50 text-indigo-700 border-indigo-100'
-                    "
+                    class="px-2 py-1 rounded-full text-xs font-medium border bg-teal-50 text-teal-700 border-teal-100"
                   >
-                    {{ item.type === "ebru" ? "Ebru" : "Fotoğraf" }}
+                    Ebru
                   </span>
                 </td>
 
@@ -287,7 +275,7 @@
                     @click.stop
                   >
                     <button
-                      @click="goToEdit(item)"
+                      @click="goToEdit()"
                       class="w-full px-4 py-2 text-sm text-foreground hover:bg-muted text-left flex items-center gap-2"
                     >
                       <Edit2 class="w-3 h-3" /> Düzenle
@@ -366,7 +354,7 @@ const galleryStore = useGalleryStore();
 
 // State
 const searchQuery = ref("");
-const filterType = ref("all"); // 'all', 'ebru', 'photo'
+const filterType = ref("all");
 const showAll = ref(false);
 const activeMenu = ref(null);
 
@@ -379,22 +367,12 @@ const handleLogout = () => {
 // Tüm Verileri Çek
 onMounted(async () => {
   await galleryStore.fetchEbruFromSupabase();
-  await galleryStore.fetchPhotosFromSupabase();
 });
 
-// 1. Birleştirilmiş ve Filtrelenmiş Liste
+// 1. Filtrelenmiş liste (yalnızca ebru)
 const filteredArtworks = computed(() => {
-  // Ebru ve Fotoğrafları birleştir, tip etiketi ekle
-  const ebrus = galleryStore.ebruArtworks.map((i) => ({ ...i, type: "ebru" }));
-  const photos = galleryStore.photographs.map((i) => ({ ...i, type: "photo" }));
-  let combined = [...ebrus, ...photos];
+  let combined = galleryStore.ebruArtworks.map((i) => ({ ...i, type: "ebru" }));
 
-  // A) Kategori Filtresi
-  if (filterType.value !== "all") {
-    combined = combined.filter((item) => item.type === filterType.value);
-  }
-
-  // B) Arama Filtresi (Başlık TR veya EN)
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase();
     combined = combined.filter(
@@ -403,14 +381,13 @@ const filteredArtworks = computed(() => {
     );
   }
 
-  // C) Sıralama (Popülerlik - Views)
   return combined.sort((a, b) => (b.views || 0) - (a.views || 0));
 });
 
 // 2. Sayfalama
 const paginatedArtworks = computed(() => {
   if (showAll.value) return filteredArtworks.value;
-  return filteredArtworks.value.slice(0, 5); // İlk 5 tanesi
+  return filteredArtworks.value.slice(0, 5);
 });
 
 // 3. Grafik İçin Top 5
@@ -425,23 +402,16 @@ const calculatePercentage = (views) => {
   return Math.round((views / maxViews) * 100);
 };
 
-// --- AKSİYONLAR ---
-
 const toggleMenu = (id) => {
   activeMenu.value = activeMenu.value === id ? null : id;
 };
 
-const goToEdit = (item) => {
-  // İlgili yönetim sayfasına yönlendir
-  if (item.type === "ebru") {
-    router.push("/admin/ebru");
-  } else {
-    router.push("/admin/photography");
-  }
+const goToEdit = () => {
+  router.push("/admin/ebru");
 };
 
 const deleteItem = async (item) => {
-  await galleryStore.deleteArtwork(item.id, item.type, item.image);
+  await galleryStore.deleteArtwork(item.id, "ebru", item.image);
   activeMenu.value = null;
 };
 </script>

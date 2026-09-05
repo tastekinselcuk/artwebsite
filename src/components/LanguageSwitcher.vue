@@ -1,39 +1,46 @@
 <template>
-  <div class="flex gap-2">
+  <div
+    v-if="!isAdminPage"
+    class="fixed bottom-5 right-5 z-40 flex items-center gap-0.5 rounded-full border border-border/50 bg-background/70 p-0.5 shadow-sm backdrop-blur-md"
+    role="group"
+    aria-label="Language"
+  >
     <button
-      @click="changeLanguage('tr')"
+      v-for="lang in languages"
+      :key="lang.code"
+      @click="changeLanguage(lang.code)"
+      type="button"
+      :aria-pressed="currentLocale === lang.code"
       :class="[
-        'px-3 py-1 rounded-lg text-sm font-medium transition-all',
-        currentLocale === 'tr'
-          ? 'bg-primary text-primary-foreground'
-          : 'bg-muted text-muted-foreground hover:bg-muted/80'
+        'min-w-[2rem] rounded-full px-2.5 py-1 text-[11px] font-medium tracking-wide transition-colors duration-200',
+        currentLocale === lang.code
+          ? 'bg-foreground text-background'
+          : 'text-muted-foreground hover:text-foreground',
       ]"
     >
-      TR
-    </button>
-    <button
-      @click="changeLanguage('en')"
-      :class="[
-        'px-3 py-1 rounded-lg text-sm font-medium transition-all',
-        currentLocale === 'en'
-          ? 'bg-primary text-primary-foreground'
-          : 'bg-muted text-muted-foreground hover:bg-muted/80'
-      ]"
-    >
-      EN
+      {{ lang.label }}
     </button>
   </div>
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 
-const { locale } = useI18n()
-const currentLocale = computed(() => locale.value)
+const { locale } = useI18n();
+const route = useRoute();
+
+const currentLocale = computed(() => locale.value);
+const isAdminPage = computed(() => route.path.startsWith("/admin"));
+
+const languages = [
+  { code: "tr", label: "TR" },
+  { code: "en", label: "EN" },
+];
 
 const changeLanguage = (lang) => {
-  locale.value = lang
-  localStorage.setItem('language', lang)
-}
+  locale.value = lang;
+  localStorage.setItem("language", lang);
+};
 </script>
