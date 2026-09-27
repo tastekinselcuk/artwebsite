@@ -1,10 +1,17 @@
 <template>
-  <div class="min-h-screen bg-background">
+  <div class="bg-background">
     <!-- Hero Section -->
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-      <canvas ref="canvasRef" class="absolute inset-0 w-full h-full object-cover z-0"></canvas>
+      <img
+        :src="heroImage"
+        alt="Sarpé Atelier ebru sanatı"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <canvas ref="canvasRef" class="absolute inset-0 w-full h-full object-cover z-[1]"></canvas>
 
-      <div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background z-1 pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background z-[2] pointer-events-none" />
 
       <div class="relative z-10 text-center px-6 animate-fade-in-slow pointer-events-none">
         <h1 class="text-5xl md:text-7xl font-display font-bold mb-4 text-foreground drop-shadow-lg">
@@ -47,10 +54,11 @@
 
         <!-- Bölüm 1: Temel Bilgiler (Grid Kartları - Daraltıldı) -->
         <div class="grid md:grid-cols-3 gap-4 md:gap-5 mb-10 md:mb-12">
-          <div 
-            v-for="(topic, index) in ebruTopics" 
+          <router-link
+            v-for="(topic, index) in ebruTopics"
             :key="topic.id"
-            class="group relative overflow-hidden rounded-2xl bg-card border border-border/50 p-5 md:p-6 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
+            :to="topic.to"
+            class="group relative overflow-hidden rounded-2xl bg-card border border-border/50 p-5 md:p-6 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 block"
           >
             <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             
@@ -59,11 +67,14 @@
               <h3 class="font-display text-base font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {{ t(topic.titleKey) }}
               </h3>
-              <p class="text-xs leading-relaxed text-muted-foreground">
+              <p class="text-xs leading-relaxed text-muted-foreground mb-3">
                 {{ t(topic.bodyKey) }}
               </p>
+              <span class="text-[10px] font-medium uppercase tracking-wider text-primary/80">
+                {{ t("guide.readMore") }} →
+              </span>
             </div>
-          </div>
+          </router-link>
         </div>
 
         <!-- Bölüm 2: Ebru Çeşitleri (İnteraktif Vitrin - Oransal Küçültüldü) -->
@@ -283,16 +294,19 @@ const ebruTopics = [
     id: "what",
     titleKey: "home.philosophy.topics.what.title",
     bodyKey: "home.philosophy.topics.what.body",
+    to: "/rehber/ebru-nedir",
   },
   {
     id: "how",
     titleKey: "home.philosophy.topics.how.title",
     bodyKey: "home.philosophy.topics.how.body",
+    to: "/rehber/ebru-nasil-yapilir",
   },
   {
     id: "unique",
     titleKey: "home.philosophy.topics.unique.title",
     bodyKey: "home.philosophy.topics.unique.body",
+    to: "/rehber/ebru-cesitleri",
   },
 ];
 
@@ -359,9 +373,12 @@ onMounted(async () => {
     varietiesStore.fetchVarieties();
   }
 
-  if (canvasRef.value) {
+  const startLiquid = async () => {
+    if (!canvasRef.value) return;
     try {
-      const module = await import("https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js");
+      const module = await import(
+        "https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js"
+      );
       const LiquidBackground = module.default;
       const app = LiquidBackground(canvasRef.value);
       app.loadImage(heroImage);
@@ -372,6 +389,13 @@ onMounted(async () => {
     } catch (error) {
       console.error("Liquid background error:", error);
     }
+  };
+
+  // Defer heavy Three.js hero so first paint / SEO crawl isn't blocked
+  if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+    window.requestIdleCallback(() => startLiquid(), { timeout: 2000 });
+  } else {
+    setTimeout(startLiquid, 400);
   }
 });
 

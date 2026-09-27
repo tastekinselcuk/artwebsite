@@ -4,8 +4,28 @@
     "ebruGallery": "Gallery",
     "ebruShop": "Shop",
     "photography": "Photography",
+    "guides": "Guide",
     "about": "About",
     "cart": "Cart"
+  },
+  "footer": {
+    "tagline": "Traditional Turkish Ebru art in a contemporary gallery.",
+    "explore": "Explore",
+    "guides": "Guides",
+    "legal": "Info",
+    "allGuides": "All guides"
+  },
+  "guide": {
+    "indexEyebrow": "Learn",
+    "indexTitle": "Ebru Guides",
+    "indexDescription": "What is Ebru, and what are its types? Short guides to traditional Turkish marbling.",
+    "backToIndex": "All guides",
+    "moreGuides": "More guides",
+    "readMore": "Read"
+  },
+  "legal": {
+    "eyebrow": "Info",
+    "updated": "Last updated"
   },
   "home": {
     "hero": {
@@ -331,6 +351,51 @@
     "tax": "Tax",
     "total": "Total",
     "freeShipping": "Free Shipping",
-    "processing": "Processing..."
+    "processing": "Processing...",
+    "privacy": "Privacy",
+    "returns": "Returns"
+  },
+  "seo": {
+    "home": {
+      "title": "Sarpé Atelier | Turkish Ebru Art & Handmade Works",
+      "description": "Traditional Turkish Ebru (marbling) gallery, types of Ebru, and original handmade artworks by Zehra Sarp."
+    },
+    "about": {
+      "title": "About the Artist | Zehra Sarp — Sarpé Atelier",
+      "description": "About Ebru artist Zehra Sarp and Sarpé Atelier — traditional Turkish marbling with a contemporary eye."
+    },
+    "ebru": {
+      "title": "Ebru Gallery | Traditional Turkish Marbling",
+      "description": "Explore Battal, Gelgit, Taraklı, floral and Hatip Ebru works in the Sarpé Atelier gallery."
+    },
+    "shop": {
+      "title": "Art Shop | Original Ebru & Design Pieces",
+      "description": "Original Ebru paintings and designs born from marbling. Browse handmade works at Sarpé Atelier."
+    },
+    "product": {
+      "title": "Product | Sarpé Atelier",
+      "description": "Original Ebru artwork and design pieces from the Sarpé Atelier collection."
+    },
+    "checkout": {
+      "title": "Checkout",
+      "description": "Secure checkout"
+    },
+    "orderSuccess": {
+      "title": "Order Confirmed",
+      "description": "Your order was received"
+    },
+    "admin": {
+      "title": "Admin",
+      "description": "Admin"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist or has moved.",
+      "backHome": "Back to home"
+    },
+    "guides": {
+      "title": "Ebru Guides | What Is Ebru, Types & More",
+      "description": "What is Ebru and what are its types? Guides to traditional Turkish marbling from Sarpé Atelier."
+    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen py-20 px-6">
+  <div class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-20 animate-fade-in">

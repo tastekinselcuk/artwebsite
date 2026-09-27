@@ -4,8 +4,28 @@
     "ebruGallery": "Galeri",
     "ebruShop": "Mağaza",
     "photography": "Fotoğrafçılık",
+    "guides": "Rehber",
     "about": "Hakkımda",
     "cart": "Sepet"
+  },
+  "footer": {
+    "tagline": "Geleneksel Türk ebru sanatını çağdaş bir vitrinde buluşturuyoruz.",
+    "explore": "Keşfet",
+    "guides": "Rehber",
+    "legal": "Bilgi",
+    "allGuides": "Tüm rehberler"
+  },
+  "guide": {
+    "indexEyebrow": "Öğren",
+    "indexTitle": "Ebru Rehberi",
+    "indexDescription": "Ebru nedir, çeşitleri nelerdir? Kısa, net rehber yazılarıyla geleneksel Türk ebru sanatını keşfedin.",
+    "backToIndex": "Tüm rehberler",
+    "moreGuides": "Diğer rehberler",
+    "readMore": "Oku"
+  },
+  "legal": {
+    "eyebrow": "Bilgi",
+    "updated": "Son güncelleme"
   },
   "home": {
     "hero": {
@@ -331,6 +351,51 @@
     "tax": "KDV",
     "total": "Toplam",
     "freeShipping": "Ücretsiz Kargo",
-    "processing": "İşleniyor..."
+    "processing": "İşleniyor...",
+    "privacy": "Gizlilik",
+    "returns": "İade"
+  },
+  "seo": {
+    "home": {
+      "title": "Sarpé Atelier | Türk Ebru Sanatı ve El Yapımı Eserler",
+      "description": "Geleneksel Türk ebru sanatı galerisi, ebru çeşitleri ve Zehra Sarp imzalı orijinal el yapımı eserler. Sarpé Atelier."
+    },
+    "about": {
+      "title": "Sanatçı Hakkında | Zehra Sarp — Sarpé Atelier",
+      "description": "Ebru sanatçısı Zehra Sarp hakkında: geleneksel Türk ebru sanatını çağdaş bir estetikle yorumlayan Sarpé Atelier."
+    },
+    "ebru": {
+      "title": "Ebru Galerisi | Geleneksel Türk Ebru Sanatı",
+      "description": "Battal, gelgit, taraklı, çiçekli ve hatip ebru eserlerini keşfedin. Sarpé Atelier ebru galerisi."
+    },
+    "shop": {
+      "title": "Eser Mağazası | Orijinal Ebru ve Sanat Ürünleri",
+      "description": "Orijinal ebru tabloları ve ebru’dan doğan tasarımlar. El yapımı eserleri Sarpé Atelier mağazasından inceleyin."
+    },
+    "product": {
+      "title": "Ürün Detayı | Sarpé Atelier",
+      "description": "Sarpé Atelier koleksiyonundan orijinal ebru eseri ve sanat ürünü detayları."
+    },
+    "checkout": {
+      "title": "Ödeme",
+      "description": "Güvenli ödeme"
+    },
+    "orderSuccess": {
+      "title": "Sipariş Onayı",
+      "description": "Siparişiniz alındı"
+    },
+    "admin": {
+      "title": "Yönetim Paneli",
+      "description": "Admin"
+    },
+    "notFound": {
+      "title": "Sayfa bulunamadı",
+      "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+      "backHome": "Ana sayfaya dön"
+    },
+    "guides": {
+      "title": "Ebru Rehberi | Ebru Nedir, Çeşitleri ve Daha Fazlası",
+      "description": "Ebru nedir, ebru çeşitleri nelerdir? Geleneksel Türk ebru sanatı hakkında Sarpé Atelier rehber yazıları."
+    }
   }
 }

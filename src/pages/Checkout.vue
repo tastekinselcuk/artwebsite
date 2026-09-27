@@ -140,6 +140,13 @@
                 <span v-if="orderStore.loading" class="w-5 h-5 border-2 border-white/50 border-t-white rounded-full animate-spin"></span>
                 {{ orderStore.loading ? t("common.processing") || "İşleniyor..." : t("checkout.placeOrder") || "Siparişi Tamamla" }}
               </button>
+              <p class="mt-3 text-center text-[11px] text-muted-foreground leading-relaxed">
+                <router-link to="/gizlilik" class="underline hover:text-foreground">{{ t("checkout.privacy") }}</router-link>
+                ·
+                <router-link to="/iade-iptal" class="underline hover:text-foreground">{{ t("checkout.returns") }}</router-link>
+                ·
+                <router-link to="/kargo" class="underline hover:text-foreground">{{ t("checkout.shipping") }}</router-link>
+              </p>
             </div>
 
           </div>

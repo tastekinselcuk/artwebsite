@@ -50,7 +50,12 @@
               :to="item.to"
               @click="handleNavClick"
               class="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm text-foreground/90 transition-colors hover:bg-muted hover:text-foreground whitespace-nowrap"
-              :class="{ 'bg-muted/70 text-foreground': route.path === item.to }"
+              :class="{
+                'bg-muted/70 text-foreground':
+                  item.to === '/'
+                    ? route.path === '/'
+                    : route.path === item.to || route.path.startsWith(item.to + '/'),
+              }"
             >
               <component :is="item.icon" class="w-4 h-4 text-primary shrink-0" />
               <span class="font-medium tracking-wide">{{ t(item.label) }}</span>
@@ -64,7 +69,7 @@
 
 <script setup>
 import { ref, computed, watch } from "vue";
-import { Home, Droplet, User, ShoppingBag } from "lucide-vue-next";
+import { Home, Droplet, User, ShoppingBag, BookOpen } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import CartDropdown from "@/components/CartDropdown.vue";
@@ -79,6 +84,7 @@ const navItems = [
   { to: "/", icon: Home, label: "nav.home" },
   { to: "/ebru", icon: Droplet, label: "nav.ebruGallery" },
   { to: "/shop", icon: ShoppingBag, label: "nav.ebruShop" },
+  { to: "/rehber", icon: BookOpen, label: "nav.guides" },
   { to: "/about", icon: User, label: "nav.about" },
 ];
 

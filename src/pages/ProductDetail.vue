@@ -83,12 +83,13 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useProductStore } from '@/stores/products'
 import { useCartStore } from '@/stores/cart'
-import { ArrowLeft, Star, ShoppingBag, Check } from 'lucide-vue-next'
+import { ArrowLeft, ShoppingBag, Check } from 'lucide-vue-next'
+import { applySeo, getSiteUrl } from '@/composables/useSeo'
 
 const route = useRoute()
 const { t, locale, te } = useI18n()
@@ -102,7 +103,6 @@ const added = ref(false)
 
 const formatPrice = (price) => new Intl.NumberFormat("tr-TR", { style: "currency", currency: "TRY" }).format(price);
 
-// Dil Fonksiyonları
 const getProductTitle = (p) => {
   if (typeof p.title === 'string') return te(p.title) ? t(p.title) : p.title;
   return p.title[currentLocale.value] || p.title.tr || 'İsimsiz';
@@ -118,7 +118,42 @@ const getProductTag = (p) => {
 };
 const getCategoryLabel = (cat) => te(`shop.filters.${cat}`) ? t(`shop.filters.${cat}`) : cat;
 
-// Veriyi Çek
+const syncProductSeo = () => {
+  if (!product.value) return;
+  const title = getProductTitle(product.value);
+  const description =
+    getProductDescription(product.value) || t('seo.product.description');
+  const siteUrl = getSiteUrl();
+
+  applySeo({
+    title: `${title} | Sarpé Atelier`,
+    description: description.slice(0, 160),
+    path: route.path,
+    image: product.value.image,
+    locale: locale.value,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: title,
+      description,
+      image: product.value.image ? [product.value.image] : undefined,
+      brand: { '@type': 'Brand', name: 'Sarpé Atelier' },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'TRY',
+        price: product.value.price,
+        availability:
+          product.value.stock > 0
+            ? 'https://schema.org/InStock'
+            : 'https://schema.org/OutOfStock',
+        url: `${siteUrl}${route.path}`,
+      },
+    },
+  });
+};
+
+watch([product, locale], syncProductSeo);
+
 onMounted(async () => {
   loading.value = true;
   if (productStore.products.length === 0) {
@@ -126,16 +161,13 @@ onMounted(async () => {
   }
   product.value = productStore.getProductById(Number(route.params.id));
   loading.value = false;
+  syncProductSeo();
 });
 
-// Sepete Ekle ve Çekmeceyi Aç
 const handleAddToCart = async () => {
   await cartStore.addItem(product.value);
   added.value = true;
   setTimeout(() => added.value = false, 1500);
-  
-  // (Eğer navbarında sepet yoksa alttaki openCart iptal edilebilir, 
-  // ama navbar'ındaki toggleCart'a benzer şekilde sepeti açmak istiyorsan durabilir)
   cartStore.isOpen = true; 
 };
 </script>
